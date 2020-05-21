@@ -8,9 +8,10 @@ function App() {
     <div>
       <Layout>
         <h1>Weather App</h1>
+        <h2>Saskatoon</h2>
         <Daily />
       </Layout>
-    </div>
+    </div> 
   );
 }
 
