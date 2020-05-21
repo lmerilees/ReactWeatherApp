@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const styleDaily = {
     backgroundColor: "white",
     border: "solid 1px gray",
