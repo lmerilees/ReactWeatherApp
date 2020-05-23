@@ -39,7 +39,8 @@ const styleLow = {
 }
 
 const styleCond = {
-    color: "white",
+    padding: "0 5px",
+    color: "black",
     size: 6,
 
 }

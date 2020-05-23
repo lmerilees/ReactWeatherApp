@@ -7,16 +7,16 @@ import background1 from '../src/Images/background1.jpg'
 const styleBG = {
   backgroundImage: 'url('+background1+')',
   backgroundSize: "cover",
+  height: "100vh",
 }
 
 function App() {
   return (
     <div style={styleBG}>
       <Layout>
-        <h1>Weather App</h1>
         <h2>Saskatoon</h2>
-        <Daily />
       </Layout>
+      <Daily />
     </div> 
   );
 }
