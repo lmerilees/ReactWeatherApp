@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import Location from '../../components/Location/Location'
 import {Container} from 'react-bootstrap';
 
-let latt = null
-let longg = null
-
 class Locations extends Component {
 
     constructor(props) {
@@ -12,23 +9,38 @@ class Locations extends Component {
 
         this.state = {
             errorMessage: null,
-            locName: null,
+            lat: null,
+            lon: null,
+            locName: null
         }
     }   
 
-    // this method is called when the component is rendered for the first time
-    componentDidMount() {
+     /**
+     * Get geolocation of device and store latitude and longitude in states
+     */
+    getLocation(){
+        navigator.geolocation.getCurrentPosition(
+           (position) => {
+               this.setState({ 
+                   lat: position.coords.latitude,
+                   lon: position.coords.longitude
+               });
+               // if successful, proceed to make API request
+               this.getLocationName();
+           },
+           (error) => 
+               this.setState({ errorMessage: error })
+           )
+       }
 
-        // determine geolocation of user
-        navigator.geolocation.getCurrentPosition(function(position){
-            latt = position.coords.latitude
-            longg = position.coords.longitude
-            console.log(latt)
-            console.log(longg)
-        }); 
+
+    /**
+    * Get location name from OpenWeatherMap API (there is probably a better way to do this)
+    */
+    getLocationName(){
 
         // request 5 day forecast from Open Weather Map API
-        fetch("https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat=52.11888866666666&lon=-106.66792299999999", {
+        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat='+this.state.lat.toString()+'&lon='+this.state.lon.toString(), {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
@@ -45,24 +57,29 @@ class Locations extends Component {
                 return Promise.reject(err);
             }
 
-            console.log(data)
-        
             // otherwise set states
-            this.setState({ locName: data.city.name,
-                        })
+            this.setState({ 
+                locName: data.city.name
+            })
         })
         .catch(err => {
             this.setState({ errorMessage: err });
             console.error("An error occured", err);
         });
+    
+    
+    }
+
+    // this method is called when the component is rendered for the first time
+    componentDidMount() {
+        this.getLocation();
     } 
 
     render(){
         const { locName } = this.state;
-        console.log({ locName })
         return(
             <Container>
-                <Location name={ locName } />
+                <Location locName={locName} />
             </Container>
         );
     }

@@ -2,18 +2,13 @@ import React, {Component} from 'react';
 import Daily from '../../components/Daily/Daily'
 import {Container} from 'react-bootstrap';
 
-let latt = null
-let longg = null
-
 class Dailies extends Component {
-
     constructor(props) {
         super(props);
-
         this.state = {
             errorMessage: null,
             lat: null,
-            long: null,
+            lon: null,
             day1: null,
             day2: null,
             day3: null,
@@ -22,19 +17,31 @@ class Dailies extends Component {
         }
     }   
 
-    // this method is called when the component is rendered for the first time
-    componentDidMount() {
+    /**
+     * Get geolocation of device and store latitude and longitude in states
+     */
+    getLocation(){
+         navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({ 
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude
+                });
+                // if successful, proceed to make API request
+                this.getDaily();
+            },
+            (error) => 
+                this.setState({ errorMessage: error })
+            )
+        }
 
-        // determine geolocation of user
-        navigator.geolocation.getCurrentPosition(function(position){
-            latt = position.coords.latitude
-            longg = position.coords.longitude
-            console.log(latt)
-            console.log(longg)
-        }); 
+        /**
+         * Get 5 day weather forecare from OpenWeatherMap API
+         */
+    getDaily(){
 
         // request 5 day forecast from Open Weather Map API
-        fetch("https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat=52.11888866666666&lon=-106.66792299999999", {
+        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat='+this.state.lat.toString()+'&lon='+this.state.lon.toString(), {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
@@ -53,8 +60,6 @@ class Dailies extends Component {
 
             console.log(data)
 
-            
-
             // otherwise set states
             this.setState({ day1: data.list[4].weather[0].description,
                             day2: data.list[12].weather[0].description,
@@ -72,14 +77,20 @@ class Dailies extends Component {
             this.setState({ errorMessage: err });
             console.error("An error occured", err);
         });
+
+
+    }
+
+    // this method is called when the component is rendered for the first time
+    componentDidMount() {
+
+        // determine user location and make API request
+        this.getLocation();
+        
     } 
 
     render(){
-        const { day1 } = this.state;
-        const { day2 } = this.state;
-        const { day3 } = this.state;
-        const { day4 } = this.state;
-        const { day5 } = this.state;
+        const { day1, day2, day3, day4, day5 } = this.state;
 
         return(
             <Container>

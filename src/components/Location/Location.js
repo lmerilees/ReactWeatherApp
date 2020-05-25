@@ -6,7 +6,7 @@ const styleLoc = {
     padding: "10px",
     cursor: "pointer",
     display: "flex",
-    flexDirectioin: "row",
+    flexDirection: "row",
 }
 
 const styleName = {
@@ -17,7 +17,7 @@ const styleName = {
 
 const location = (props) => (
     <div style={styleLoc}>
-        <div style={styleName}>{props.name}</div>
+        <div style={styleName}>{props.locName}</div>
     </div>
 );
 
