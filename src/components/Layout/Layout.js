@@ -2,9 +2,9 @@ import React from 'react';
 
 const layout = (props) => (
     <div>
-        <main>
-            {props.children}
-        </main>
+        <main> {
+            props.children
+        } </main>
     </div>
 );
 

@@ -52,7 +52,7 @@ class Dailies extends Component {
 
         /**
          * Get 5 day weather forecare from OpenWeatherMap API
-         */
+         */ 
     getDaily(){
 
         // request 5 day forecast from Open Weather Map API
@@ -86,31 +86,96 @@ class Dailies extends Component {
 
             // determine day names
             for (var i=0; i <= 4; i++){
-                if (dArray[i].getDay() === 0){
-                    dArray[i] = "Sunday"
+                switch (dArray[i].getDay()){
+                    case 0:
+                        dArray[i] = "Sunday";
+                        break;
+                    case 1:
+                        dArray[i] = "Monday";
+                        break;
+                    case 2:
+                        dArray[i] = "Tuesday";
+                        break;
+                    case 3:
+                        dArray[i] = "Wednesday";
+                        break;
+                    case 4: 
+                        dArray[i] = "Thursday";
+                        break;
+                    case 5:
+                        dArray[i] = "Friday"
+                        break;
+                    case 6:
+                        dArray[i] = "Saturday"
+                        break;
+                    default:
+                        break;
+                }   
+            }
+
+            // determine high and low of each day (this can be done easier with premium tier of OpenWeatherMap api :( )
+            let max = -100;
+            let min = 100;
+            for(i=0; i<8; i++){
+                if(data.list[i].main.temp > max){
+                    max = data.list[i].main.temp;
+                    this.setState({high1: Math.round(max)});
                 }
-                else if (dArray[i].getDay() === 1){
-                    dArray[i] = "Monday"
+                if(data.list[i].main.temp < min){
+                    min = data.list[i].main.temp;
+                    this.setState({low1: Math.round(min)});
                 }
-                else if (dArray[i].getDay() === 2){
-                    dArray[i] = "Tuesday"
+            }
+            max = -100;
+            min = 100;
+            for(i=8; i<16; i++){
+                if(data.list[i].main.temp > max){
+                    max = data.list[i].main.temp;
+                    this.setState({high2: Math.round(max)});
                 }
-                else if (dArray[i].getDay() === 3){
-                    dArray[i] = "Wednesday"
+                if(data.list[i].main.temp < min){
+                    min = data.list[i].main.temp;
+                    this.setState({low2: Math.round(min)});
                 }
-                else if (dArray[i].getDay() === 4){
-                    dArray[i] = "Thursday"
+            }
+            max = -100;
+            min = 100;
+            for(i=16; i<24; i++){
+                if(data.list[i].main.temp > max){
+                    max = data.list[i].main.temp;
+                    this.setState({high3: Math.round(max)});
                 }
-                else if (dArray[i].getDay() === 5){
-                    dArray[i] = "Friday"
+                if(data.list[i].main.temp < min){
+                    min = data.list[i].main.temp;
+                    this.setState({low3: Math.round(min)});
                 }
-                else if (dArray[i].getDay() === 6){
-                    dArray[i] = "Saturday"
+            }
+            max = -100;
+            min = 100;
+            for(i=24; i<32; i++){
+                if(data.list[i].main.temp > max){
+                    max = data.list[i].main.temp;
+                    this.setState({high4: Math.round(max)});
+                }
+                if(data.list[i].main.temp < min){
+                    min = data.list[i].main.temp;
+                    this.setState({low4: Math.round(min)});
+                }
+            }
+            max = -100;
+            min = 100;
+            for(i=32; i<40; i++){
+                if(data.list[i].main.temp > max){
+                    max = data.list[i].main.temp;
+                    this.setState({high5: Math.round(max)});
+                }
+                if(data.list[i].main.temp < min){
+                    min = data.list[i].main.temp;
+                    this.setState({low5: Math.round(min)});
                 }
             }
 
-
-            // set states
+            // set remaining states
             this.setState({ day1: dArray[0],
                             day2: dArray[1],
                             day3: dArray[2],
@@ -121,16 +186,11 @@ class Dailies extends Component {
                             date3: d3.getDate(),
                             date4: d4.getDate(),
                             date5: d5.getDate(),
-                            cond1: data.list[4].weather[0].description,
-                            cond2: data.list[12].weather[0].description,
-                            cond3: data.list[20].weather[0].description,
-                            cond4: data.list[28].weather[0].description,
-                            cond5: data.list[36].weather[0].description,
-                            high1: data.list[4].main.temp,
-                            high2: data.list[12].main.temp,
-                            high3: data.list[20].main.temp,
-                            high4: data.list[28].main.temp,
-                            high5: data.list[36].main.temp,
+                            cond1: data.list[4].weather[0].main,
+                            cond2: data.list[12].weather[0].main,
+                            cond3: data.list[20].weather[0].main,
+                            cond4: data.list[28].weather[0].main,
+                            cond5: data.list[36].weather[0].main,
                         })
         })
         .catch(err => {
@@ -152,16 +212,19 @@ class Dailies extends Component {
     render(){
         const { cond1, cond2, cond3, cond4, cond5,
                 day1, day2, day3, day4, day5,
-                date1, date2, date3, date4, date5  } = this.state;
+                date1, date2, date3, date4, date5,
+                high1, high2, high3, high4, high5, 
+                low1, low2, low3, low4, low5,
+            } = this.state;
 
         return(
             <Container>
                 <h3>5-day Forecast</h3>
-                <Daily name={day1} date={date1} img="image1" high="15" low="5" cond={cond1} />
-                <Daily name={day2} date={date2} img="image2" high="20" low="10" cond={cond2} />
-                <Daily name={day3} date={date3} img="image3" high="17" low="10" cond={cond3} />
-                <Daily name={day4} date={date4} img="image4" high="23" low="15" cond={cond4} />
-                <Daily name={day5} date={date5} img="image5" high="14" low="7" cond={cond5} />
+                <Daily name={day1} date={date1} img="image1" high={high1} low={low1} cond={cond1} />
+                <Daily name={day2} date={date2} img="image2" high={high2} low={low2} cond={cond2} />
+                <Daily name={day3} date={date3} img="image3" high={high3} low={low3} cond={cond3} />
+                <Daily name={day4} date={date4} img="image4" high={high4} low={low4} cond={cond4} />
+                <Daily name={day5} date={date5} img="image5" high={high5} low={low5} cond={cond5} />
             </Container>
         );
     }

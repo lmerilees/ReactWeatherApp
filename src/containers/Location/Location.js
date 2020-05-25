@@ -13,55 +13,41 @@ class Locations extends Component {
             lon: null,
             locName: null
         }
-    }   
+    }
 
-     /**
+    /**
      * Get geolocation of device and store latitude and longitude in states
      */
-    getLocation(){
-        navigator.geolocation.getCurrentPosition(
-           (position) => {
-               this.setState({ 
-                   lat: position.coords.latitude,
-                   lon: position.coords.longitude
-               });
-               // if successful, proceed to make API request
-               this.getLocationName();
-           },
-           (error) => 
-               this.setState({ errorMessage: error })
-           )
-       }
+    getLocation() {
+        navigator.geolocation.getCurrentPosition((position) => {
+            this.setState({lat: position.coords.latitude, lon: position.coords.longitude});
+            // if successful, proceed to make API request
+            this.getLocationName();
+        }, (error) => this.setState({errorMessage: error}))
+    }
 
 
     /**
     * Get location name from OpenWeatherMap API (there is probably a better way to do this)
     */
-    getLocationName(){
-
-        // request 5 day forecast from Open Weather Map API
-        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat='+this.state.lat.toString()+'&lon='+this.state.lon.toString(), {
+    getLocationName() { // request 5 day forecast from Open Weather Map API
+        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat=' + this.state.lat.toString() + '&lon=' + this.state.lon.toString(), {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": "0f7862f8efmsh15e592da62b201dp198c03jsn53244766f824"
+                "x-rapidapi-key": "1f7862f8efmsh15e592da62b201dp198c03jsn53244766f824"
             }
-        })
-        .then(async response => {
+        }).then(async response => {
             const data = await response.json();
             // check if reponse is an error
-            if(!response.ok){
-                // get error message or default reponse
+            if (!response.ok) { // get error message or default reponse
                 const err = (data && data.message) || response.status;
                 return Promise.reject(err);
             }
             // otherwise set states
-            this.setState({ 
-                locName: data.city.name
-            })
-        })
-        .catch(err => {
-            this.setState({ errorMessage: err });
+            this.setState({locName: data.city.name})
+        }).catch(err => {
+            this.setState({errorMessage: err});
             console.error("An error occured", err);
         });
     }
@@ -69,13 +55,16 @@ class Locations extends Component {
     // this method is called when the component is rendered for the first time
     componentDidMount() {
         this.getLocation();
-    } 
+    }
 
-    render(){
-        const { locName } = this.state;
-        return(
+
+    // change to locName="{locName}
+    render() {
+        //const {locName} = this.state;
+        return (
             <Container>
-                <Location locName={locName} />
+
+                <Location locName="Saskatoon"/>
             </Container>
         );
     }
