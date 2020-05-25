@@ -18,8 +18,8 @@ const styleName = {
 
 const styleDate = {
     color: "gray",
-    padding: "0 5px",
-    marginLeft: "20px",
+    padding: "0 10px",
+    marginLeft: "30px",
     flex: "6"
 }
 

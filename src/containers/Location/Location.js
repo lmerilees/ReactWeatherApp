@@ -49,14 +49,12 @@ class Locations extends Component {
         })
         .then(async response => {
             const data = await response.json();
-            
             // check if reponse is an error
             if(!response.ok){
                 // get error message or default reponse
                 const err = (data && data.message) || response.status;
                 return Promise.reject(err);
             }
-
             // otherwise set states
             this.setState({ 
                 locName: data.city.name
@@ -66,8 +64,6 @@ class Locations extends Component {
             this.setState({ errorMessage: err });
             console.error("An error occured", err);
         });
-    
-    
     }
 
     // this method is called when the component is rendered for the first time
