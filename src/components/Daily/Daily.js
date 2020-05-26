@@ -19,29 +19,33 @@ const styleName = {
 const styleDate = {
     color: "gray",
     padding: "0 10px",
-    size: 6
+    fontsize: 6,
+    flex: "6"
 }
 
 const styleImg = {
-    padding: "0 5px"
+    padding: "0 5px", 
+    flex: "5"
 }
 
 const styleHigh = {
     color: "dark grey",
-    size: 12,
-    padding: "0 5px"
+    fontsize: 12,
+    padding: "0 1px",
+    flex: "3"
 }
 
 const styleLow = {
     color: "grey",
-    size: 8,
-    padding: "0 5px"
+    fontsize: 8,
+    padding: "0 1px",
+    flex: "3"
 }
 
 const styleCond = {
     padding: "0 5px",
     color: "black",
-    size: 6
+    fontsize: 6
 
 }
 
