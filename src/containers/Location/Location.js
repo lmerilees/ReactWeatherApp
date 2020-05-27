@@ -28,27 +28,33 @@ class Locations extends Component {
     /**
     * Get location name from OpenWeatherMap API (there is probably a better way to do this)
     */
-    getLocationName() { // request 5 day forecast from Open Weather Map API
-        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat=' + this.state.lat.toString() + '&lon=' + this.state.lon.toString(), {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": "1f7862f8efmsh15e592da62b201dp198c03jsn53244766f824"
-            }
-        }).then(async response => {
-            const data = await response.json();
-            // check if reponse is an error
-            if (!response.ok) { // get error message or default reponse
-                const err = (data && data.message) || response.status;
-                return Promise.reject(err);
-            }
-            // otherwise set states
-            this.setState({locName: data.city.name})
-        }).catch(err => {
-            this.setState({errorMessage: err});
-            console.error("An error occured", err);
-        });
-    }
+   getLocationName() { // request 5 day forecast from Open Weather Map API
+    fetch("https://api.opencagedata.com/geocode/v1/json?key=4190527b6b8b4b4fac1b6bb1d7c3309f&q=" + this.state.lat + "%2C" + this.state.lon + "&pretty=1", {
+        "method": "GET",
+    }).then(async response => {
+        const data = await response.json();
+        // check if reponse is an error
+        if (!response.ok) { // get error message or default reponse
+            const err = (data && data.message) || response.status;
+            return Promise.reject(err);
+        }
+        console.log(data)
+
+        // otherwise set states
+        this.setState({
+            cityName: data.results[0].components.county,
+            provName: data.results[0].components.state_code,
+            countryName: data.results[0].components.country,
+            countryCode: data.results[0].components.country_code
+        })
+
+        this.getCurrent()
+
+    }).catch(err => {
+        this.setState({errorMessage: err});
+        console.error("An error occured", err);
+    });
+}
 
     // this method is called when the component is rendered for the first time
     componentDidMount() {

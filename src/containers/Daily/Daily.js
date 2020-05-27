@@ -52,13 +52,9 @@ class Dailies extends Component {
     * Get 5 day weather forecart from OpenWeatherMap API
     */
     getDaily() { // request 5 day forecast from Open Weather Map API
-        fetch('https://community-open-weather-map.p.rapidapi.com/forecast?units=metric&lat=' + this.state.lat.toString() + '&lon=' + this.state.lon.toString(), {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": "0f7862f8efmsh15e592da62b201dp198c03jsn53244766f824"
-            }
-        }).then(async response => {
+        let API = "648f721923c5e9d95de6fc8b69c904a2"
+        fetch("http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=" + this.state.lat + "&lon=" + this.state.lon + "&appid=" + API,)
+        .then(async response => {
             const data = await response.json();
 
             // check if reponse is an error
