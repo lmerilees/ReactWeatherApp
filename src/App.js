@@ -17,6 +17,7 @@ function App() {
         <div style={styleBG}>
             <Layout>
                 <Current/>
+                <br></br>
                 <Daily/>
             </Layout>
         </div>

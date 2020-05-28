@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Location from '../../components/Location/Location'
-import {Container} from 'react-bootstrap';
+import Current from '../../components/Current/Current'
+import {Container, Row, Col} from 'react-bootstrap';
 
-class Locations extends Component {
+class Currents extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,10 +10,13 @@ class Locations extends Component {
             lat: null,
             lon: null,
             cityName: null,
-            provName: null,
-            countryName: null,
             temp: null,
             feelsLike: null,
+            cond: null,
+            wind: null,
+            visibility: null,
+            barometer: null,
+            humidity: null
         }
     }
 
@@ -46,9 +49,7 @@ class Locations extends Component {
             
             // otherwise set states
             this.setState({
-                cityName: data.results[0].components.county,
-                provName: data.results[0].components.state_code,
-                countryName: data.results[0].components.country,
+                cityName: data.results[0].components.county + ", " + data.results[0].components.state_code,
             })
 
             this.getCurrent()
@@ -74,6 +75,15 @@ class Locations extends Component {
             }
             console.log(data)
             // otherwise set states
+            this.setState({
+                temp: Math.round(data.main.temp) + "   C",
+                feelsLike: "Feels like " + Math.round(data.main.feels_like) + "  C",
+                cond: data.weather[0].description,
+                wind: "Wind " + data.wind.speed,
+                visibility: "Visibility " + data.visibility,
+                barometer: "Pressure " + data.main.pressure,
+                humidity: "Humidity " + data.main.humidity
+            })
 
         }).catch(err => {
             this.setState({errorMessage: err});
@@ -87,15 +97,16 @@ class Locations extends Component {
     }
 
 
-    // change to locName="{locName} when you feel like wasting API calls or figure out a better way to do this
     render() { 
-        const {cityName, provName, countryName} = this.state;
+        const {cityName, temp, feelsLike, cond, wind, visibility, barometer, humidity} = this.state;
         return (
             <Container>
-                <Location cityName={cityName} provName={provName} countryName={countryName}/>
+                <Row>
+                    <Col><Current cityName={cityName} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity}/></Col>
+                </Row>
             </Container>
         );
     }
 }
 
-export default Locations;
+export default Currents;

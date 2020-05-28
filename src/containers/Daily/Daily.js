@@ -73,11 +73,11 @@ class Dailies extends Component {
 
             // set remaining states (that required no manipulation)
             this.setState({
-                cond1: data.list[4].weather[0].main,
-                cond2: data.list[12].weather[0].main,
-                cond3: data.list[20].weather[0].main,
-                cond4: data.list[28].weather[0].main,
-                cond5: data.list[36].weather[0].main
+                cond1: data.list[4].weather[0].description,
+                cond2: data.list[12].weather[0].description,
+                cond3: data.list[20].weather[0].description,
+                cond4: data.list[28].weather[0].description,
+                cond5: data.list[36].weather[0].description
             })
         }).catch(err => {
             this.setState({errorMessage: err});
