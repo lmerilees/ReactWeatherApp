@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 import Current from '../../components/Current/Current'
 import {Container, Row, Col} from 'react-bootstrap';
 
+
+//* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
+import sunnybig from 'C:/Users/city_/weather-app2/src/Images/sunnybig.png'
+import mostlyCloudybig from 'C:/Users/city_/weather-app2/src/Images/mostlyCloudybig.png'
+import cloudybig from 'C:/Users/city_/weather-app2/src/Images/cloudybig.png'
+import rainbig from 'C:/Users/city_/weather-app2/src/Images/rainbig.png'
+import snowbig from 'C:/Users/city_/weather-app2/src/Images/snowbig.png'
+import thunderstormbig from 'C:/Users/city_/weather-app2/src/Images/thunderstormbig.png'
+
 class Currents extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +25,9 @@ class Currents extends Component {
             wind: null,
             visibility: null,
             barometer: null,
-            humidity: null
+            humidity: null,
+            time: null,
+            icon: null
         }
     }
 
@@ -74,16 +85,46 @@ class Currents extends Component {
                 return Promise.reject(err);
             }
             console.log(data)
+            let time = new Date().getTime()
+            let date = new Date(time).toString();
+
             // otherwise set states
             this.setState({
-                temp: Math.round(data.main.temp) + "   C",
-                feelsLike: "Feels like " + Math.round(data.main.feels_like) + "  C",
+                temp: Math.round(data.main.temp) + "°  C",
+                feelsLike: "Feels like " + Math.round(data.main.feels_like) + "°  C",
                 cond: data.weather[0].description,
-                wind: "Wind " + data.wind.speed,
-                visibility: "Visibility " + data.visibility,
-                barometer: "Pressure " + data.main.pressure,
-                humidity: "Humidity " + data.main.humidity
+                wind: "Wind  " + data.wind.speed + " km/h",
+                visibility: "Visibility  " + data.visibility.toString().slice(0, 2) + " km",
+                barometer: "Pressure  " + data.main.pressure + " mb",
+                humidity: "Humidity  " + data.main.humidity + "%",
+                time: "Updated at: " + date.slice(15, 21)
             })
+
+            // determine which icon to display
+            for (var i = 0; i <= 4; i++) {
+                switch (this.state.cond) {
+                    case "clear": this.setState({icon: sunnybig});
+                        break;
+                    case "broken clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                        break;
+                    case "scattered clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                        break;
+                    case "few clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                        break;
+                    case "overcast clouds": this.setState({icon: <img src={cloudybig} alt="img2"></img>});
+                        break;
+                    case "light rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                        break;
+                    case "rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                        break;
+                    case "thunderstorm": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
+                        break;
+                    case "snow": this.setState({icon: <img src={snowbig} alt="img2"></img>});
+                        break;
+                    default:
+                        break;
+                }
+            }
 
         }).catch(err => {
             this.setState({errorMessage: err});
@@ -98,11 +139,11 @@ class Currents extends Component {
 
 
     render() { 
-        const {cityName, temp, feelsLike, cond, wind, visibility, barometer, humidity} = this.state;
+        const {cityName, temp, feelsLike, cond, wind, visibility, barometer, humidity, time, icon} = this.state;
         return (
             <Container>
                 <Row>
-                    <Col><Current cityName={cityName} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity}/></Col>
+                    <Col><Current cityName={cityName} icon={icon} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity} time={time}/></Col>
                 </Row>
             </Container>
         );

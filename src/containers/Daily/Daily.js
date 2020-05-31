@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 import Daily from '../../components/Daily/Daily'
 import {Container} from 'react-bootstrap';
 
+//* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
+import sunny from 'C:/Users/city_/weather-app2/src/Images/sunny.png'
+import mostlyCloudy from 'C:/Users/city_/weather-app2/src/Images/mostlyCloudy.png'
+import cloudy from 'C:/Users/city_/weather-app2/src/Images/cloudy.png'
+import rain from 'C:/Users/city_/weather-app2/src/Images/rain.png'
+import snow from 'C:/Users/city_/weather-app2/src/Images/snow.png'
+import thunderstorm from 'C:/Users/city_/weather-app2/src/Images/thunderstorm.png'
+
 class Dailies extends Component {
     constructor(props) {
         super(props);
@@ -65,12 +73,6 @@ class Dailies extends Component {
 
             console.log(data)
 
-            // determine day of week and date of our dataset
-            this.getDayName(data);
-
-            // determine high and low of each day (this can be done easier with premium tier of OpenWeatherMap api :( )
-            this.getHighLow(data);
-
             // set remaining states (that required no manipulation)
             this.setState({
                 cond1: data.list[4].weather[0].description,
@@ -79,12 +81,136 @@ class Dailies extends Component {
                 cond4: data.list[28].weather[0].description,
                 cond5: data.list[36].weather[0].description
             })
+
+            // determine day of week and date of our dataset
+            this.getDayName(data);
+
+            // determine high and low of each day (this can be done easier with premium tier of OpenWeatherMap api :( )
+            this.getHighLow(data);
+            
         }).catch(err => {
             this.setState({errorMessage: err});
             console.error("An error occured", err);
         });
 
 
+    }
+
+    /**
+     * This function checks the current condition for each day and sets the icon appropriately
+     * @param  data 
+     */
+    getIcons(){
+        switch (this.state.cond1)  {
+            case "clear sky": this.setState({image1: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image1: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image1: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image1: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image1: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image1: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image1: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image1: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image1: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond2)  {
+            case "clear sky": this.setState({image2: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image2: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image2: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image2: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image2: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image2: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image2: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image2: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image2: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond3)  {
+            case "clear sky": this.setState({image3: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image3: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image3: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image3: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image3: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image3: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image3: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image3: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image3: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond4)  {
+            case "clear sky": this.setState({image4: <img src={sunny} alt="img1"></img> });
+                break;
+            case "few clouds": this.setState({image4: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "scattered clouds": this.setState({image4: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image4: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image4: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image4: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image4: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image4: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image4: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond5)  {
+            case "clear sky": this.setState({image5: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image5: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image5: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image5: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image5: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image5: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image5: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image5: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image5: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
     }
 
     /**
@@ -127,6 +253,9 @@ class Dailies extends Component {
             }
         }
 
+        // determine which icon to display
+        this.getIcons();
+
         this.setState({
             day1: dArray[0],
             day2: dArray[1],
@@ -153,11 +282,11 @@ class Dailies extends Component {
         for (var i = 0; i < 8; i++) {
             if (data.list[i].main.temp > max) {
                 max = data.list[i].main.temp;
-                this.setState({high1: Math.round(max)});
+                this.setState({high1: Math.round(max) + "°"});
             }
             if (data.list[i].main.temp < min) {
                 min = data.list[i].main.temp;
-                this.setState({low1: Math.round(min)});
+                this.setState({low1: Math.round(min) + "°"});
             }
         }
         max = -100;
@@ -165,11 +294,11 @@ class Dailies extends Component {
         for (i = 8; i < 16; i++) {
             if (data.list[i].main.temp > max) {
                 max = data.list[i].main.temp;
-                this.setState({high2: Math.round(max)});
+                this.setState({high2: Math.round(max) + "°"});
             }
             if (data.list[i].main.temp < min) {
                 min = data.list[i].main.temp;
-                this.setState({low2: Math.round(min)});
+                this.setState({low2: Math.round(min) + "°"});
             }
         }
         max = -100;
@@ -177,11 +306,11 @@ class Dailies extends Component {
         for (i = 16; i < 24; i++) {
             if (data.list[i].main.temp > max) {
                 max = data.list[i].main.temp;
-                this.setState({high3: Math.round(max)});
+                this.setState({high3: Math.round(max) + "°"});
             }
             if (data.list[i].main.temp < min) {
                 min = data.list[i].main.temp;
-                this.setState({low3: Math.round(min)});
+                this.setState({low3: Math.round(min) + "°"});
             }
         }
         max = -100;
@@ -189,11 +318,11 @@ class Dailies extends Component {
         for (i = 24; i < 32; i++) {
             if (data.list[i].main.temp > max) {
                 max = data.list[i].main.temp;
-                this.setState({high4: Math.round(max)});
+                this.setState({high4: Math.round(max) + "°"});
             }
             if (data.list[i].main.temp < min) {
                 min = data.list[i].main.temp;
-                this.setState({low4: Math.round(min)});
+                this.setState({low4: Math.round(min) + "°"});
             }
         }
         max = -100;
@@ -201,11 +330,11 @@ class Dailies extends Component {
         for (i = 32; i < 40; i++) {
             if (data.list[i].main.temp > max) {
                 max = data.list[i].main.temp;
-                this.setState({high5: Math.round(max)});
+                this.setState({high5: Math.round(max) + "°"});
             }
             if (data.list[i].main.temp < min) {
                 min = data.list[i].main.temp;
-                this.setState({low5: Math.round(min)});
+                this.setState({low5: Math.round(min) + "°"});
             }
         }
     }
@@ -214,7 +343,6 @@ class Dailies extends Component {
     // this method is called when the component is rendered for the first time
     componentDidMount() { // determine user location and make API request
         this.getLocation();
-
     }
 
     render() {
@@ -243,39 +371,44 @@ class Dailies extends Component {
             low2,
             low3,
             low4,
-            low5
+            low5,
+            image1,
+            image2, 
+            image3, 
+            image4, 
+            image5
         } = this.state;
 
         return (
             <Container>
-                <h3 style={{color: "white"}}>5-day Forecast</h3>
+                <h3 style={{color: "white"}}>Daily Forecast</h3>
                 <Daily name={day1}
                     date={date1}
-                    img="image1"
+                    img={image1}
                     high={high1}
                     low={low1}
                     cond={cond1}/>
                 <Daily name={day2}
                     date={date2}
-                    img="image2"
+                    img={image2}
                     high={high2}
                     low={low2}
                     cond={cond2}/>
                 <Daily name={day3}
                     date={date3}
-                    img="image3"
+                    img={image3}
                     high={high3}
                     low={low3}
                     cond={cond3}/>
                 <Daily name={day4}
                     date={date4}
-                    img="image4"
+                    img={image4}
                     high={high4}
                     low={low4}
                     cond={cond4}/>
                 <Daily name={day5}
                     date={date5}
-                    img="image5"
+                    img={image5}
                     high={high5}
                     low={low5}
                     cond={cond5}/>

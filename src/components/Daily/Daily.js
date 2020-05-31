@@ -7,46 +7,46 @@ const styleDaily = {
     padding: "10px",
     cursor: "pointer",
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
+    fontSize: 30,
+    fontFamily: "Acme"
 }
 
 const styleName = {
-    padding: "0 5px",
-    flex: "1",
+    padding: "10px",
+    flex: "1.2",
     color: "#004e92"
 }
 
 const styleDate = {
     color: "gray",
-    padding: "0 10px",
-    fontsize: 6,
-    flex: "6"
+    fontSize: 40,
+    flex: "1"
 }
 
-const styleImg = {
-    padding: "0 5px", 
-    flex: "5"
+const styleImg = { 
+    flex: "1"
 }
 
 const styleHigh = {
     color: "dark grey",
     fontsize: 12,
-    padding: "0 1px",
-    flex: "3"
+    padding: "10px",
+    flex: "0"
 }
 
 const styleLow = {
     color: "grey",
     fontsize: 8,
-    padding: "0 1px",
-    flex: "3"
+    padding: "10px",
+    flex: "1"
 }
 
 const styleCond = {
-    padding: "0 5px",
+    padding: "10px",
     color: "black",
-    fontsize: 6
-
+    fontsize: 6,
+    flex: "1.8"
 }
 
 const daily = (props) => (
