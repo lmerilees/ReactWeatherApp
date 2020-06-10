@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Current from '../../components/Current/Current'
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
@@ -38,7 +38,7 @@ class Currents extends Component {
         navigator.geolocation.getCurrentPosition((position) => {
             this.setState({lat: position.coords.latitude, lon: position.coords.longitude});
 
-            // if successful, proceed to get 
+            // if successful, proceed to get name
             this.getLocationName();
         }, (error) => this.setState({errorMessage: error}))
     }
@@ -62,12 +62,17 @@ class Currents extends Component {
             this.setState({
                 cityName: data.results[0].components.county + ", " + data.results[0].components.state_code,
             })
-
+            
+            // proceed to get current weather
             this.getCurrent()
 
         }).catch(err => {
-            this.setState({errorMessage: err});
+            this.setState({ errorMessage: err,
+                            cityName: "Error retrieving location name"});
             console.error("An error occured", err);
+
+            // we still want to call this function because the location name API is different than the weather API
+            this.getCurrent()
         });
     }
 
@@ -116,6 +121,8 @@ class Currents extends Component {
                     case "light rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
                         break;
                     case "rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                        break;
+                    case "light intensity shower rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
                         break;
                     case "thunderstorm": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
                         break;
