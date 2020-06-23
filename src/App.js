@@ -4,13 +4,12 @@ import Layout from './components/Layout/Layout'
 import Home from '../src/Home'
 import Map from './containers/Map/Map'
 import background1 from '../src/Images/background1.jpg'
-import {BrowserRouter, Link, NavLink, Redirect, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, NavLink, Redirect, Route, Switch} from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap';
 
 const styleBG = {
     backgroundImage: 'url(' + background1 + ')',
-    backgroundSize: "cover",
-    height: "100vh"
+    backgroundSize: "cover"
 }
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
                 <Layout>
                     <BrowserRouter>
                         <Navbar bg="dark" variant="dark" expand="sm" >
-                            <Navbar.Brand as={Link} to="/">Weatherboi</Navbar.Brand>
+                            <Navbar.Brand>Weatherboi</Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="mr-auto">

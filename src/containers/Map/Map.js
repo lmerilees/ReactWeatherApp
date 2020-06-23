@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react'
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
 const mapStyles = {
-    width: '100%',
-    height: '100%',
-    padding: '5px, 5px'
+    position: 'relative',
+    width: '90%',
+    height: '90%'
 };
 
 class MapContainer extends Component {

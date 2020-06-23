@@ -9,7 +9,6 @@ function Home() {
             <Col>
                 <Row>
                     <Current/>
-                    <br></br>
                     <Daily/>
                 </Row>
             </Col>

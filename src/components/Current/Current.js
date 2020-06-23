@@ -26,7 +26,7 @@ const styleCond = {
 const styleFeels = {
     color: "light gray",
     textAlign: "center",
-    fontSize: "20px"
+    fontSize: "15px"
 }
 
 const Current = (props) => (
