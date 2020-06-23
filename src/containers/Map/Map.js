@@ -4,7 +4,8 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 const mapStyles = {
     width: '100%',
-    height: '400px',
+    height: '100%',
+    padding: '5px, 5px'
 };
 
 class MapContainer extends Component {
@@ -19,21 +20,16 @@ class MapContainer extends Component {
 
     render() {
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <p>Testeeboi</p>
-                        <Map
-                            google={this.props.google}
-                            style={mapStyles}
-                            initialCenter={{
-                                lat: 52.12,
-                                lng: -106.67
-                            }}
-                            zoom={12}
-                        />
-                    </Col>
-                </Row>
+            <Container fluid>
+                <Map
+                    google={this.props.google}
+                    style={mapStyles}
+                    initialCenter={{
+                            lat: 52.12,
+                            lng: -106.67
+                        }}
+                    zoom={12}
+                />
             </Container>
         );
     }

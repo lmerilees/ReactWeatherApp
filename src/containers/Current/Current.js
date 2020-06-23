@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Current from '../../components/Current/Current';
 import {Container, Row, Col} from 'react-bootstrap';
-import Toolbar from '../../components/Toolbar/Toolbar';
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
 import sunnybig from 'C:/Users/city_/weather-app2/src/Images/sunnybig.png'
@@ -150,9 +149,9 @@ class Currents extends Component {
         return (
             <Container>
                 <Row>
-                    <Col><Current cityName={cityName} /> 
-                        <Toolbar/>
-                         <Current icon={icon} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity} time={time}/><Current></Current></Col>
+                    <Col><Current cityName={cityName} />
+                         <Current icon={icon} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity} time={time}/>
+                    </Col>
                 </Row>
             </Container>
         );
