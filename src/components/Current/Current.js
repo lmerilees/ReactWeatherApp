@@ -44,7 +44,7 @@ const Current = (props) => (
             <div style={styleFeels}>{props.time}</div>
         </div>
         <div>
-            <div style={styleFeels}>{props.feelsLike} | {props.wind} | {props.visibility} | {props.barometer} | {props.humidity}</div>
+            <div style={styleFeels}>{props.feelsLike} {props.wind} {props.visibility} {props.barometer} {props.humidity}</div>
         </div>
 
     </div>

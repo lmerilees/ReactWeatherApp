@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Current from '../../components/Current/Current'
-import {Container, Row, Col, Button} from 'react-bootstrap';
-
+import Current from '../../components/Current/Current';
+import {Container, Row, Col} from 'react-bootstrap';
+import Toolbar from '../../components/Toolbar/Toolbar';
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
 import sunnybig from 'C:/Users/city_/weather-app2/src/Images/sunnybig.png'
@@ -96,11 +96,11 @@ class Currents extends Component {
             // otherwise set states
             this.setState({
                 temp: Math.round(data.main.temp) + "°  C",
-                feelsLike: "Feels like " + Math.round(data.main.feels_like) + "°  C",
+                feelsLike: "Feels like " + Math.round(data.main.feels_like) + "°  C |",
                 cond: data.weather[0].description,
-                wind: "Wind  " + data.wind.speed + " km/h",
-                visibility: "Visibility  " + data.visibility.toString().slice(0, 2) + " km",
-                barometer: "Pressure  " + data.main.pressure + " mb",
+                wind: "Wind  " + data.wind.speed + " km/h |",
+                visibility: "Visibility  " + data.visibility.toString().slice(0, 2) + " km |",
+                barometer: "Pressure  " + data.main.pressure + " mb |",
                 humidity: "Humidity  " + data.main.humidity + "%",
                 time: "Updated at: " + date.slice(15, 21)
             })
@@ -150,7 +150,9 @@ class Currents extends Component {
         return (
             <Container>
                 <Row>
-                    <Col><Current cityName={cityName} icon={icon} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity} time={time}/></Col>
+                    <Col><Current cityName={cityName} /> 
+                        <Toolbar/>
+                         <Current icon={icon} temp={temp} cond={cond} feelsLike={feelsLike} wind={wind} visibility={visibility} barometer={barometer} humidity={humidity} time={time}/><Current></Current></Col>
                 </Row>
             </Container>
         );

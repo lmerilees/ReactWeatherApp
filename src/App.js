@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout'
 import Daily from './containers/Daily/Daily'
-import Toolbar from './containers/Toolbar/Toolbar'
 import Current from './containers/Current/Current'
 import background1 from '../src/Images/background1.jpg'
+import Toolbar from '../src/containers/Toolbar/Toolbar'
+import {BrowserRouter, Link, NavLink, Redirect, Route, Switch} from 'react-router-dom'
+import { Nav } from 'react-bootstrap';
+
 
 const styleBG = {
     backgroundImage: 'url(' + background1 + ')',

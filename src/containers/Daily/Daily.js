@@ -1,7 +1,6 @@
-import React, { Component, useState, useEffect, forceUpdate } from 'react';
+import React, { Component } from 'react';
 import Daily from '../../components/Daily/Daily'
 import { Container } from 'react-bootstrap';
-import { Button } from 'react-bootstrap' 
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
 import sunny from 'C:/Users/city_/weather-app2/src/Images/sunny.png'
@@ -298,6 +297,7 @@ class Dailies extends Component {
      */
     getHighLow(data) {
 
+        // these values should cover any possible temperature (I hope!)
         let max = -100;
         let min = 100;
         for (var i = 0; i < 8; i++) {
@@ -405,7 +405,7 @@ class Dailies extends Component {
 
         return (
             <Container>
-                <h3 style={{color: "white"}}>Daily Forecast</h3>
+                <h3 style={{color: "#292b2c"}}>Daily Forecast</h3>
                 <Daily name={day1}
                     date={date1}
                     img={image1}

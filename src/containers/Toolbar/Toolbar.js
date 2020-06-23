@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Toolbar from '../../components/Toolbar/Toolbar'
-import {Container, Button, ButtonToolbar, ButtonGroup} from 'react-bootstrap';
+import {Button, Nav, Navbar, Form, FormControl, ButtonToolbar, ButtonGroup} from 'react-bootstrap';
 import refresh from 'C:/Users/city_/weather-app2/src/Images/refresh.png'
 
 
@@ -25,11 +24,19 @@ class Toolbars extends Component {
 
     render() {
         return (
-            <ButtonToolbar aria-label="Toolbar with button groups">
-                <ButtonGroup size="lg" className="mv-2" aria-label="First group">
-                    <Button variant="white" onClick={this.reloadPage}><img src={refresh} alt="refresh" onclick={this.reloadPage}></img></Button>
-                </ButtonGroup>
-            </ButtonToolbar>
+            <>
+                <Navbar bg="dark" variant="dark">
+                    <Navbar.Brand href="#home">Weatherboi</Navbar.Brand>
+                    <Nav className="mr-auto">
+                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="#radar">Radar</Nav.Link>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-info">Search</Button>
+                    </Form>
+                </Navbar>
+            </>
         );
     }
 }
