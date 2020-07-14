@@ -8,8 +8,12 @@ import {BrowserRouter, NavLink, Redirect, Route, Switch} from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap';
 
 const styleBG = {
+    width: '100%',
+    height: '100%',
     backgroundImage: 'url(' + background1 + ')',
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
 }
 
 function App() {

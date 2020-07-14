@@ -9,18 +9,19 @@ const styleDaily = {
     display: "flex",
     flexDirection: "row",
     fontSize: 30,
-    fontFamily: "Acme"
+    fontFamily: "Acme",
+    alignItems: "center"
 }
 
 const styleName = {
     padding: "10px",
-    flex: "1.2",
+    flex: "1.4",
     color: "#004e92"
 }
 
 const styleDate = {
     color: "gray",
-    fontSize: 40,
+    fontSize: 30,
     flex: "1"
 }
 
@@ -30,23 +31,20 @@ const styleImg = {
 
 const styleHigh = {
     color: "dark grey",
-    fontsize: 12,
-    padding: "10px",
-    flex: "0"
+    fontsize: 10,
+    flex: "0.5"
 }
 
 const styleLow = {
     color: "grey",
-    fontsize: 8,
-    padding: "10px",
+    fontsize: 6,
     flex: "1"
 }
 
 const styleCond = {
-    padding: "10px",
     color: "black",
-    fontsize: 6,
-    flex: "1.8"
+    fontsize: 4,
+    flex: "1"
 }
 
 const daily = (props) => (

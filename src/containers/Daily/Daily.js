@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Daily from '../../components/Daily/Daily'
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
 import sunny from 'C:/Users/city_/weather-app2/src/Images/sunny.png'
@@ -404,38 +404,58 @@ class Dailies extends Component {
         } = this.state;
 
         return (
-            <Container>
+            <Container fluid="xl">
                 <h3 style={{color: "#292b2c"}}>Daily Forecast</h3>
-                <Daily name={day1}
-                    date={date1}
-                    img={image1}
-                    high={high1}
-                    low={low1}
-                    cond={cond1}/>
-                <Daily name={day2}
-                    date={date2}
-                    img={image2}
-                    high={high2}
-                    low={low2}
-                    cond={cond2}/>
-                <Daily name={day3}
-                    date={date3}
-                    img={image3}
-                    high={high3}
-                    low={low3}
-                    cond={cond3}/>
+                <Row>
+                    <Col>
+                        <Daily name={day1}
+                        date={date1}
+                        img={image1}
+                        high={high1}
+                        low={low1}
+                        cond={cond1}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <Daily name={day2}
+                            date={date2}
+                            img={image2}
+                            high={high2}
+                            low={low2}
+                            cond={cond2}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    <Daily name={day3}
+                        date={date3}
+                        img={image3}
+                        high={high3}
+                        low={low3}
+                        cond={cond3}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                 <Daily name={day4}
-                    date={date4}
-                    img={image4}
-                    high={high4}
-                    low={low4}
-                    cond={cond4}/>
+                        date={date4}
+                        img={image4}
+                        high={high4}
+                        low={low4}
+                        cond={cond4}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                 <Daily name={day5}
-                    date={date5}
-                    img={image5}
-                    high={high5}
-                    low={low5}
-                    cond={cond5}/>
+                        date={date5}
+                        img={image5}
+                        high={high5}
+                        low={low5}
+                        cond={cond5}/>
+                    </Col>
+                </Row>
             </Container>
         );
     }

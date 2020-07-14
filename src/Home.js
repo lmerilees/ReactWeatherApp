@@ -6,12 +6,16 @@ import Current from './containers/Current/Current'
 function Home() {
     return (
         <Container fluid>
-            <Col>
-                <Row>
+            <Row>
+                <Col>
                     <Current/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <Daily/>
-                </Row>
-            </Col>
+                </Col>
+            </Row>
         </Container>
     )
 }
