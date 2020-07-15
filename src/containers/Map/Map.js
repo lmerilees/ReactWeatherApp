@@ -18,6 +18,10 @@ const radarStyles = {
     zIndex: 1
 }
 
+const timeStyles = {
+    color: "white"
+}
+
 class MapContainer extends Component {
     constructor(props){
         super(props)
@@ -69,22 +73,36 @@ class MapContainer extends Component {
         let img2 = cur - (cur % 600) - 5400
         let img1 = cur - (cur % 600) - 6000
 
+        let date1 = new Date(img1 * 1000).toString()
+        let date2 = new Date(img2 * 1000).toString()
+        let date3 = new Date(img3 * 1000).toString()
+        let date4 = new Date(img4 * 1000).toString()
+        let date5 = new Date(img5 * 1000).toString()
+        let date6 = new Date(img6 * 1000).toString()
+        let date7 = new Date(img7 * 1000).toString()
+        let date8 = new Date(img8 * 1000).toString()
+        let date9 = new Date(img9 * 1000).toString()
+        let date10 = new Date(img10 * 1000).toString()
+
+        console.log(date1)
         // grab last 10 radar images (100 minutes or 1 hour and 40 minutes)
-        let url10 = "https://tilecache.rainviewer.com/v2/radar/" + img10 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url9 = "https://tilecache.rainviewer.com/v2/radar/" + img9 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url8 = "https://tilecache.rainviewer.com/v2/radar/" + img8 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url7 = "https://tilecache.rainviewer.com/v2/radar/" + img7 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url6 = "https://tilecache.rainviewer.com/v2/radar/" + img6 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url5 = "https://tilecache.rainviewer.com/v2/radar/" + img5 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url4 = "https://tilecache.rainviewer.com/v2/radar/" + img4 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url3 = "https://tilecache.rainviewer.com/v2/radar/" + img3 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url2 = "https://tilecache.rainviewer.com/v2/radar/" + img2 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
-        let url1 = "https://tilecache.rainviewer.com/v2/radar/" + img1 + "/512/5/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url10 = "https://tilecache.rainviewer.com/v2/radar/" + img10 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url9 = "https://tilecache.rainviewer.com/v2/radar/" + img9 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url8 = "https://tilecache.rainviewer.com/v2/radar/" + img8 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url7 = "https://tilecache.rainviewer.com/v2/radar/" + img7 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url6 = "https://tilecache.rainviewer.com/v2/radar/" + img6 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url5 = "https://tilecache.rainviewer.com/v2/radar/" + img5 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url4 = "https://tilecache.rainviewer.com/v2/radar/" + img4 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url3 = "https://tilecache.rainviewer.com/v2/radar/" + img3 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url2 = "https://tilecache.rainviewer.com/v2/radar/" + img2 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
+        let url1 = "https://tilecache.rainviewer.com/v2/radar/" + img1 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
         
         let urls = [url1, url2, url3, url4, url5, url6, url7, url8, url9, url10]
+        let times = [date1, date2, date3, date4, date5, date6, date7, date8, date9, date10]
+
 
         // update url state every x seconds
-        this.interval = setInterval(() => this.setState({url: urls[index]}, this.nextImage()), 500)    
+        this.interval = setInterval(() => this.setState({url: urls[index], time: times[index]}, this.nextImage()), 500)    
     }
 
     // this function will loop a counter from 0-9 to act as our index counter
@@ -112,7 +130,7 @@ class MapContainer extends Component {
                                 lat: this.state.lat,
                                 lng: this.state.lon
                             }}
-                        zoom={6}
+                        zoom={7}
                         />
                         <img src={this.state.url} style={radarStyles} alt={""}/>
                     </Col>
@@ -120,6 +138,7 @@ class MapContainer extends Component {
                 <Row>
                     <Col>
                         {/* find a better way to do this or put something here */}
+                        <div style={timeStyles}>{this.state.time}</div>
                         <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                     </Col>
                 </Row>
