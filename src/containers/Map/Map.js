@@ -84,7 +84,6 @@ class MapContainer extends Component {
         let date9 = new Date(img9 * 1000).toString()
         let date10 = new Date(img10 * 1000).toString()
 
-        console.log(date1)
         // grab last 10 radar images (100 minutes or 1 hour and 40 minutes)
         let url10 = "https://tilecache.rainviewer.com/v2/radar/" + img10 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"
         let url9 = "https://tilecache.rainviewer.com/v2/radar/" + img9 + "/512/6/" + this.state.lat.toFixed(2) + "/" + this.state.lon.toFixed(2) + "/5/0_0.png"

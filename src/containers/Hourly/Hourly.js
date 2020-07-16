@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Daily from '../../components/Daily/Daily'
+import Hourly from '../../components/Hourly/Hourly'
 import { Container, Row, Col } from 'react-bootstrap';
 
 //* Icons courtesy of https://www.iconfinder.com/rasmusnielsendk */
@@ -10,38 +10,61 @@ import rain from 'C:/Users/city_/weather-app2/src/Images/rain.png'
 import snow from 'C:/Users/city_/weather-app2/src/Images/snow.png'
 import thunderstorm from 'C:/Users/city_/weather-app2/src/Images/thunderstorm.png'
 
-class Dailies extends Component {
+class Hourlies extends Component {
     constructor(props) {
         super(props);
         this.state = {
             errorMessage: null,
             lat: null,
             lon: null,
-            day1: null,
-            day2: null,
-            day3: null,
-            day4: null,
-            day5: null,
-            date1: null,
-            date2: null,
-            date3: null,
-            date4: null,
-            date5: null,
-            high1: null,
-            high2: null,
-            high3: null,
-            high4: null,
-            high5: null,
-            low1: null,
-            low2: null,
-            low3: null,
-            low4: null,
-            low5: null,
             cond1: null,
             cond2: null,
             cond3: null,
             cond4: null,
-            cond5: null
+            cond5: null, 
+            cond6: null,
+            cond7: null,
+            cond8: null,
+            cond9: null,
+            cond10: null, 
+            cond11: null,
+            cond12: null,
+            time1: null,
+            time2: null,
+            time3: null,
+            time4: null,
+            time5: null,
+            time6: null,
+            time7: null,
+            time8: null,
+            time9: null,
+            time10: null,
+            time11: null,
+            time12: null,
+            temp1: null,
+            temp2: null,
+            temp3: null,
+            temp4: null,
+            temp5: null,
+            temp6: null,
+            temp7: null,
+            temp8: null,
+            temp9: null,
+            temp10: null,
+            temp11: null,
+            temp12: null,
+            image1: null,
+            image2: null,
+            image3: null,
+            image4: null,
+            image5: null,
+            image6: null,
+            image7: null,
+            image8: null,
+            image9: null,
+            image10: null,
+            image11: null,
+            image12: null,
         }
     }
 
@@ -52,16 +75,16 @@ class Dailies extends Component {
         navigator.geolocation.getCurrentPosition((position) => {
             this.setState({lat: position.coords.latitude, lon: position.coords.longitude});
             // if successful, proceed to make API request
-            this.getDaily();
+            this.getHourly();
         }, (error) => this.setState({errorMessage: error}))
     }
 
     /**
-    * Get 5 day weather forecart from OpenWeatherMap API
+    * Get 48 hour hourly weather forecast from OpenWeatherMap API
     */
-    getDaily() { // request 5 day forecast from Open Weather Map API
+    getHourly() { // request 5 day forecast from Open Weather Map API
         let API = "648f721923c5e9d95de6fc8b69c904a2"
-        fetch("http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=" + this.state.lat + "&lon=" + this.state.lon + "&appid=" + API,)
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + this.state.lat + "&lon=" + this.state.lon + "&units=metric&appid=" + API,)
         .then(async response => {
             const data = await response.json();
 
@@ -71,29 +94,91 @@ class Dailies extends Component {
                 return Promise.reject(err);
             }
 
-            console.log(data)
+            // get proper time of day for display
+            let d1 = this.getTime(new Date(data.hourly[0].dt * 1000).getHours())
+            let d2 = this.getTime(new Date(data.hourly[1].dt * 1000).getHours())
+            let d3 = this.getTime(new Date(data.hourly[2].dt * 1000).getHours())
+            let d4 = this.getTime(new Date(data.hourly[3].dt * 1000).getHours())
+            let d5 = this.getTime(new Date(data.hourly[4].dt * 1000).getHours())
+            let d6 = this.getTime(new Date(data.hourly[5].dt * 1000).getHours())
+            let d7 = this.getTime(new Date(data.hourly[6].dt * 1000).getHours())
+            let d8 = this.getTime(new Date(data.hourly[7].dt * 1000).getHours())
+            let d9 = this.getTime(new Date(data.hourly[8].dt * 1000).getHours())
+            let d10 = this.getTime(new Date(data.hourly[9].dt * 1000).getHours())
+            let d11 = this.getTime(new Date(data.hourly[10].dt * 1000).getHours())
+            let d12 = this.getTime(new Date(data.hourly[11].dt * 1000).getHours())
+
+            console.log(data.hourly[0].temp)
 
             // set remaining states (that required no manipulation)
             this.setState({
-                cond1: data.list[4].weather[0].description,
-                cond2: data.list[12].weather[0].description,
-                cond3: data.list[20].weather[0].description,
-                cond4: data.list[28].weather[0].description,
-                cond5: data.list[36].weather[0].description
+                cond1: data.hourly[0].weather[0].description,
+                cond2: data.hourly[1].weather[0].description,
+                cond3: data.hourly[2].weather[0].description,
+                cond4: data.hourly[3].weather[0].description,
+                cond5: data.hourly[4].weather[0].description,
+                cond6: data.hourly[5].weather[0].description,
+                cond7: data.hourly[6].weather[0].description,
+                cond8: data.hourly[7].weather[0].description,
+                cond9: data.hourly[8].weather[0].description,
+                cond10: data.hourly[9].weather[0].description,
+                cond11: data.hourly[10].weather[0].description,
+                cond12: data.hourly[11].weather[0].description,
+                time1: d1,
+                time2: d2,
+                time3: d3,
+                time4: d4,
+                time5: d5,
+                time6: d6,
+                time7: d7,
+                time8: d8,
+                time9: d9,
+                time10: d10,
+                time11: d11,
+                time12: d12,
+                temp1: Math.round(data.hourly[0].temp)+ "°",
+                temp2: Math.round(data.hourly[1].temp)+ "°",
+                temp3: Math.round(data.hourly[2].temp)+ "°",
+                temp4: Math.round(data.hourly[3].temp)+ "°",
+                temp5: Math.round(data.hourly[4].temp)+ "°",
+                temp6: Math.round(data.hourly[5].temp)+ "°",
+                temp7: Math.round(data.hourly[6].temp)+ "°",
+                temp8: Math.round(data.hourly[7].temp)+ "°",
+                temp9: Math.round(data.hourly[8].temp)+ "°",
+                temp10: Math.round(data.hourly[9].temp)+ "°",
+                temp11: Math.round(data.hourly[10].temp)+ "°",
+                temp12: Math.round(data.hourly[11].temp)+ "°",
+                image6: <img src={mostlyCloudy} alt="img2"></img>,
+                image7: <img src={mostlyCloudy} alt="img2"></img>,
+                image8: <img src={mostlyCloudy} alt="img2"></img>,
+                image9: <img src={mostlyCloudy} alt="img2"></img>,
+                image10: <img src={mostlyCloudy} alt="img2"></img>,
+                image11: <img src={mostlyCloudy} alt="img2"></img>,
+                image12: <img src={mostlyCloudy} alt="img2"></img>
+
             })
 
-            // determine day of week and date of our dataset
-            this.getDayName(data);
+            this.getIcons();
 
-            // determine high and low of each day (this can be done easier with premium tier of OpenWeatherMap api :( )
-            this.getHighLow(data);
-            
         }).catch(err => {
             this.setState({errorMessage: err});
             console.error("An error occured", err);
         });
+    }
 
-
+    /**
+     *  Convert 24hr to 12hr
+     * @param {*} num 
+     */
+    getTime(num) {
+        if(num >= 12) {
+            num = num - 12
+            return num + "pm"
+        }
+        if(num === 0){
+            num = 12
+        }
+        return num + "am"
     }
 
     /**
@@ -233,133 +318,6 @@ class Dailies extends Component {
         }   
     }
 
-    /**
-     * Get day name (e.g. Monday) from each day in our dataset
-     * @param {JSON} data 
-     */
-    getDayName(data) { // convert date string into date object
-        let d1 = new Date(data.list[4].dt_txt)
-        let d2 = new Date(data.list[12].dt_txt)
-        let d3 = new Date(data.list[20].dt_txt)
-        let d4 = new Date(data.list[28].dt_txt)
-        let d5 = new Date(data.list[36].dt_txt)
-        let dArray = [
-            d1,
-            d2,
-            d3,
-            d4,
-            d5
-        ]
-
-        // determine day names
-        for (var i = 0; i <= 4; i++) {
-            switch (dArray[i].getDay()) {
-                case 0: dArray[i] = "Sunday";
-                    break;
-                case 1: dArray[i] = "Monday";
-                    break;
-                case 2: dArray[i] = "Tuesday";
-                    break;
-                case 3: dArray[i] = "Wednesday";
-                    break;
-                case 4: dArray[i] = "Thursday";
-                    break;
-                case 5: dArray[i] = "Friday"
-                    break;
-                case 6: dArray[i] = "Saturday"
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        // determine which icon to display
-        this.getIcons();
-
-        this.setState({
-            day1: dArray[0],
-            day2: dArray[1],
-            day3: dArray[2],
-            day4: dArray[3],
-            day5: dArray[4],
-            date1: d1.getDate(),
-            date2: d2.getDate(),
-            date3: d3.getDate(),
-            date4: d4.getDate(),
-            date5: d5.getDate()
-        })
-    }
-
-
-    /** 
-     * Get high/low for each day in our dataset (5 days currently)
-     * @param {*} data: JSON object with our weather data from API
-     */
-    getHighLow(data) {
-
-        // these values should cover any possible temperature (I hope!)
-        let max = -100;
-        let min = 100;
-        for (var i = 0; i < 8; i++) {
-            if (data.list[i].main.temp > max) {
-                max = data.list[i].main.temp;
-                this.setState({high1: Math.round(max) + "°"});
-            }
-            if (data.list[i].main.temp < min) {
-                min = data.list[i].main.temp;
-                this.setState({low1: Math.round(min) + "°"});
-            }
-        }
-        max = -100;
-        min = 100;
-        for (i = 8; i < 16; i++) {
-            if (data.list[i].main.temp > max) {
-                max = data.list[i].main.temp;
-                this.setState({high2: Math.round(max) + "°"});
-            }
-            if (data.list[i].main.temp < min) {
-                min = data.list[i].main.temp;
-                this.setState({low2: Math.round(min) + "°"});
-            }
-        }
-        max = -100;
-        min = 100;
-        for (i = 16; i < 24; i++) {
-            if (data.list[i].main.temp > max) {
-                max = data.list[i].main.temp;
-                this.setState({high3: Math.round(max) + "°"});
-            }
-            if (data.list[i].main.temp < min) {
-                min = data.list[i].main.temp;
-                this.setState({low3: Math.round(min) + "°"});
-            }
-        }
-        max = -100;
-        min = 100;
-        for (i = 24; i < 32; i++) {
-            if (data.list[i].main.temp > max) {
-                max = data.list[i].main.temp;
-                this.setState({high4: Math.round(max) + "°"});
-            }
-            if (data.list[i].main.temp < min) {
-                min = data.list[i].main.temp;
-                this.setState({low4: Math.round(min) + "°"});
-            }
-        }
-        max = -100;
-        min = 100;
-        for (i = 32; i < 40; i++) {
-            if (data.list[i].main.temp > max) {
-                max = data.list[i].main.temp;
-                this.setState({high5: Math.round(max) + "°"});
-            }
-            if (data.list[i].main.temp < min) {
-                min = data.list[i].main.temp;
-                this.setState({low5: Math.round(min) + "°"});
-            }
-        }
-    }
-
 
     // this method is called when the component is rendered for the first time
     componentDidMount() { // determine user location and make API request
@@ -367,93 +325,68 @@ class Dailies extends Component {
     }
 
 
-    
-
     render() {
-        const {
-            cond1,
-            cond2,
-            cond3,
-            cond4,
-            cond5,
-            day1,
-            day2,
-            day3,
-            day4,
-            day5,
-            date1,
-            date2,
-            date3,
-            date4,
-            date5,
-            high1,
-            high2,
-            high3,
-            high4,
-            high5,
-            low1,
-            low2,
-            low3,
-            low4,
-            low5,
-            image1,
-            image2, 
-            image3, 
-            image4, 
-            image5
-        } = this.state;
-
         return (
-            <Container fluid="xl">
-                <h3 style={{color: "#292b2c", textAlign: "center"}}>Daily Forecast</h3>   
+            <Container fluid="xl" >
+                <h3 style={{color: "#292b2c", textAlign: "center"}}>Hourly Forecast</h3>
                 <Row>
                     <Col>
-                        <Daily name={day1}
-                        date={date1}
-                        img={image1}
-                        high={high1}
-                        low={low1}
-                        cond={cond1}/>
+                        <Hourly time={this.state.time1} cond={this.state.cond1} temp={this.state.temp1} img={this.state.image1} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                    <Daily name={day2}
-                            date={date2}
-                            img={image2}
-                            high={high2}
-                            low={low2}
-                            cond={cond2}/>
+                        <Hourly time={this.state.time2} cond={this.state.cond2} temp={this.state.temp2} img={this.state.image2} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                    <Daily name={day3}
-                        date={date3}
-                        img={image3}
-                        high={high3}
-                        low={low3}
-                        cond={cond3}/>
+                        <Hourly time={this.state.time3} cond={this.state.cond3} temp={this.state.temp3} img={this.state.image3} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                <Daily name={day4}
-                        date={date4}
-                        img={image4}
-                        high={high4}
-                        low={low4}
-                        cond={cond4}/>
+                        <Hourly time={this.state.time4} cond={this.state.cond4} temp={this.state.temp4} img={this.state.image4} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                <Daily name={day5}
-                        date={date5}
-                        img={image5}
-                        high={high5}
-                        low={low5}
-                        cond={cond5}/>
+                        <Hourly time={this.state.time5} cond={this.state.cond5} temp={this.state.temp5} img={this.state.image5} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time6} cond={this.state.cond6} temp={this.state.temp6} img={this.state.image6} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time7} cond={this.state.cond7} temp={this.state.temp7} img={this.state.image7} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time8} cond={this.state.cond8} temp={this.state.temp8} img={this.state.image8} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time9} cond={this.state.cond9} temp={this.state.temp9} img={this.state.image9} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time10} cond={this.state.cond10} temp={this.state.temp10} img={this.state.image10} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time11} cond={this.state.cond11} temp={this.state.temp11} img={this.state.image11} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Hourly time={this.state.time12} cond={this.state.cond12} temp={this.state.temp12} img={this.state.image12} />
                     </Col>
                 </Row>
             </Container>
@@ -461,4 +394,4 @@ class Dailies extends Component {
     }
 }
 
-export default Dailies;
+export default Hourlies;
