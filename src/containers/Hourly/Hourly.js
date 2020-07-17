@@ -171,7 +171,7 @@ class Hourlies extends Component {
      * @param {*} num 
      */
     getTime(num) {
-        if(num >= 12) {
+        if(num > 12) {
             num = num - 12
             return num + "pm"
         }
@@ -316,6 +316,188 @@ class Hourlies extends Component {
             default:
                 break;
         }   
+        switch (this.state.cond6)  {
+            case "clear sky": this.setState({image6: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image6: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "moderate rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image6: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image6: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond7)  {
+            case "clear sky": this.setState({image7: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image7: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image7: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image7: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image7: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image7: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image7: <img src={rain} alt="img3"></img>});
+                break;
+            case "moderate rain": this.setState({image7: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image7: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image7: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image7: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond8)  {
+            case "clear sky": this.setState({image6: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image6: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image6: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "moderate rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image6: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image6: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond9)  {
+            case "clear sky": this.setState({image9: <img src={sunny} alt="img1"></img> });
+                break;
+            case "few clouds": this.setState({image9: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "scattered clouds": this.setState({image9: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image9: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image9: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image9: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image9: <img src={rain} alt="img3"></img>});
+                break;
+            case "moderate rain": this.setState({image9: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image9: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image9: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image9: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }   
+        switch (this.state.cond10)  {
+            case "clear sky": this.setState({image10: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image10: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image10: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image10: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image10: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image10: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image10: <img src={rain} alt="img3"></img>});
+                break;            
+            case "moderate rain": this.setState({image10: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image10: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image10: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image10: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }
+        switch (this.state.cond11)  {
+            case "clear sky": this.setState({image11: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image11: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image11: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image11: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image11: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image11: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image11: <img src={rain} alt="img3"></img>});
+                break;            
+            case "moderate rain": this.setState({image11: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image11: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image11: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image11: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }  
+        switch (this.state.cond12)  {
+            case "clear sky": this.setState({image12: <img src={sunny} alt="img1"></img> });
+                break;
+            case "scattered clouds": this.setState({image12: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "few clouds": this.setState({image12: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "broken clouds": this.setState({image12: <img src={mostlyCloudy} alt="img2"></img>});
+                break;
+            case "overcast clouds": this.setState({image12: <img src={cloudy} alt="img2"></img>});
+                break;
+            case "rain": this.setState({image12: <img src={rain} alt="img3"></img>});
+                break;
+            case "light rain": this.setState({image12: <img src={rain} alt="img3"></img>});
+                break;            
+            case "moderate rain": this.setState({image12: <img src={rain} alt="img3"></img>});
+                break;
+            case "heavy intensity rain": this.setState({image12: <img src={rain} alt="img3"></img>});
+                break;
+            case "thunderstorm": this.setState({image12: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "snow": this.setState({image12: <img src={snow} alt="img5"></img>});
+                break;
+            default:
+                break;
+        }  
     }
 
 
@@ -327,7 +509,7 @@ class Hourlies extends Component {
 
     render() {
         return (
-            <Container fluid="xl" >
+            <Container fluid="xl">
                 <h3 style={{color: "#292b2c", textAlign: "center"}}>Hourly Forecast</h3>
                 <Row>
                     <Col>

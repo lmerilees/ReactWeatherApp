@@ -10,12 +10,14 @@ const styleHourly = {
     flexDirection: "row",
     fontSize: 30,
     fontFamily: "Acme",
-    alignItems: "center"
+    alignItems: "center",
 }
 
 const styleTime = {
     color: "#004e92",
     flex: "1",
+    marginLeft: "10px"
+
 }
 
 const styleCond = {
@@ -31,7 +33,7 @@ const styleImg = {
 const styleTemp = {
     color: "dark grey",
     fontsize: 10,
-    flex: "0.5"
+    flex: "1"
 }
 
 const hourly = (props) => (
@@ -56,3 +58,5 @@ const hourly = (props) => (
 );
 
 export default hourly;
+
+
