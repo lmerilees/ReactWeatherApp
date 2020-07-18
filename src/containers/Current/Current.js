@@ -105,7 +105,6 @@ class Currents extends Component {
             })
 
             // determine which icon to display
-            for (var i = 0; i <= 4; i++) {
                 switch (this.state.cond) {
                     case "clear": this.setState({icon: sunnybig});
                         break;
@@ -127,10 +126,12 @@ class Currents extends Component {
                         break;
                     case "snow": this.setState({icon: <img src={snowbig} alt="img2"></img>});
                         break;
+                    case "thunderstorm with rain": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
+                        break;
                     default:
                         break;
                 }
-            }
+            
 
         }).catch(err => {
             this.setState({errorMessage: err});

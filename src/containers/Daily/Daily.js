@@ -122,6 +122,8 @@ class Dailies extends Component {
                 break;
             case "thunderstorm": this.setState({image1: <img src={thunderstorm} alt="img4"></img>});
                 break;
+            case "thunderstorm with rain": this.setState({image1: <img src={thunderstorm} alt="img4"></img>});
+                break;    
             case "snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
             default:
@@ -147,6 +149,8 @@ class Dailies extends Component {
             case "heavy intensity rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image2: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "thunderstorm with rain": this.setState({image2: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image2: <img src={snow} alt="img5"></img>});
                 break;
@@ -174,6 +178,8 @@ class Dailies extends Component {
                 break;
             case "thunderstorm": this.setState({image3: <img src={thunderstorm} alt="img4"></img>});
                 break;
+            case "thunderstorm with rain": this.setState({image4: <img src={thunderstorm} alt="img4"></img>});
+                break;
             case "snow": this.setState({image3: <img src={snow} alt="img5"></img>});
                 break;
             default:
@@ -200,6 +206,8 @@ class Dailies extends Component {
                 break;
             case "thunderstorm": this.setState({image4: <img src={thunderstorm} alt="img4"></img>});
                 break;
+            case "thunderstorm with rain": this.setState({image4: <img src={thunderstorm} alt="img4"></img>});
+                break;
             case "snow": this.setState({image4: <img src={snow} alt="img5"></img>});
                 break;
             default:
@@ -225,6 +233,8 @@ class Dailies extends Component {
             case "heavy intensity rain": this.setState({image5: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image5: <img src={thunderstorm} alt="img4"></img>});
+                break;
+            case "thunderstorm with rain": this.setState({image5: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image5: <img src={snow} alt="img5"></img>});
                 break;

@@ -8,7 +8,6 @@ const mapStyles = {
 
 const map = (props) => (
     <div style={mapStyles}>
-        
     </div>
 );
 
