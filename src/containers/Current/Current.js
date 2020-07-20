@@ -105,33 +105,32 @@ class Currents extends Component {
             })
 
             // determine which icon to display
-                switch (this.state.cond) {
-                    case "clear": this.setState({icon: sunnybig});
-                        break;
-                    case "broken clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
-                        break;
-                    case "scattered clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
-                        break;
-                    case "few clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
-                        break;
-                    case "overcast clouds": this.setState({icon: <img src={cloudybig} alt="img2"></img>});
-                        break;
-                    case "light rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
-                        break;
-                    case "rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
-                        break;
-                    case "light intensity shower rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
-                        break;
-                    case "thunderstorm": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
-                        break;
-                    case "snow": this.setState({icon: <img src={snowbig} alt="img2"></img>});
-                        break;
-                    case "thunderstorm with rain": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
-                        break;
-                    default:
-                        break;
-                }
-            
+            switch (this.state.cond) {
+                case "clear": this.setState({icon: sunnybig});
+                    break;
+                case "broken clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                    break;
+                case "scattered clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                    break;
+                case "few clouds": this.setState({icon: <img src={mostlyCloudybig} alt="img2"></img>});
+                    break;
+                case "overcast clouds": this.setState({icon: <img src={cloudybig} alt="img2"></img>});
+                    break;
+                case "light rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                    break;
+                case "rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                    break;
+                case "light intensity shower rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                    break;
+                case "thunderstorm": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
+                    break;
+                case "snow": this.setState({icon: <img src={snowbig} alt="img2"></img>});
+                    break;
+                case "thunderstorm with rain": this.setState({icon: <img src={thunderstormbig} alt="img2"></img>});
+                    break;
+                default:
+                    break;
+            }
 
         }).catch(err => {
             this.setState({errorMessage: err});

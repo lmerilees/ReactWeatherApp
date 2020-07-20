@@ -4,24 +4,23 @@ import React from 'react';
 const styleDaily = {
     backgroundColor: "white",
     border: "solid 1px gray",
-    padding: "10px",
+    padding: "6px",
     cursor: "pointer",
     display: "flex",
     flexDirection: "row",
-    fontSize: 30,
+    fontSize: 20,
     fontFamily: "Acme",
     alignItems: "center"
 }
 
 const styleName = {
-    padding: "10px",
+    padding: "6px",
     flex: "1.4",
     color: "#004e92"
 }
 
 const styleDate = {
     color: "gray",
-    fontSize: 30,
     flex: "1"
 }
 
@@ -31,7 +30,7 @@ const styleImg = {
 
 const styleHigh = {
     color: "dark grey",
-    fontsize: 10,
+    fontsize: 8,
     flex: "0.5"
 }
 
@@ -43,7 +42,7 @@ const styleLow = {
 
 const styleCond = {
     color: "black",
-    fontsize: 4,
+    fontsize: 3,
     flex: "1"
 }
 

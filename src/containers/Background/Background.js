@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import Background from '../../components/Background/Background'
-import { Container, Row, Col } from 'react-bootstrap';    
-import background1 from 'C:/Users/city_/weather-app2/src/Images/background1.jpg'
+import { Container, Row, Col } from 'react-bootstrap';
+import backgroundScattered from 'C:/Users/city_/weather-app2/src/Images/backgroundScattered.jpg'
+import backgroundCloudy from 'C:/Users/city_/weather-app2/src/Images/backgroundcloudy.jpg'
+import backgroundRain from 'C:/Users/city_/weather-app2/src/Images/backgroundrain.jpg'
+import backgroundThunderstorm from 'C:/Users/city_/weather-app2/src/Images/backgroundthunderstorm.jpg'
+import backgroundClear from 'C:/Users/city_/weather-app2/src/Images/backgroundclear.jpg'
+import backgroundOvercast from 'C:/Users/city_/weather-app2/src/Images/backgroundovercast.jpg'
+import backgroundSnow from 'C:/Users/city_/weather-app2/src/Images/backgroundsnow.jpg'
+
+import Daily from 'C:/Users/city_/weather-app2/src/containers/Daily/Daily'
+import Current from 'C:/Users/city_/weather-app2/src/containers/Current/Current'
+import Hourly from 'C:/Users/city_/weather-app2/src/containers/Hourly/Hourly'
 
 class Backgrounds extends Component {
     constructor(props) {
@@ -37,38 +47,34 @@ class Backgrounds extends Component {
                 return Promise.reject(err);
             }
 
-            console.log(data)
-
             let cond =  data.weather[0].description;
-            console.log(cond)
 
             // determine which background to display
-            switch (this.state.cond) {
-                case "clear": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+            switch(cond) {
+                case "clear": this.setState({backgroundImage: backgroundClear});
                     break;
-                case "broken clouds": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "broken clouds": this.setState({backgroundImage: backgroundCloudy});
                     break;
-                case "scattered clouds": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "scattered clouds": this.setState({backgroundImage: backgroundScattered});
                     break;
-                case "few clouds": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "overcast clouds": this.setState({backgroundImage: backgroundOvercast});
                     break;
-                case "overcast clouds": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "light rain": this.setState({backgroundImage: backgroundRain});
                     break;
-                case "light rain": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "rain": this.setState({backgroundImage: backgroundRain});
                     break;
-                case "rain": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "light intensity shower rain": this.setState({backgroundImage: backgroundRain});
                     break;
-                case "light intensity shower rain": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "thunderstorm": this.setState({backgroundImage: backgroundThunderstorm});
                     break;
-                case "thunderstorm": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "thunderstorm with rain": this.setState({backgroundImage: backgroundThunderstorm});
                     break;
-                case "snow": this.setState({backgroundImage: <img src={background1} alt="img2"></img>});
+                case "snow": this.setState({backgroundImage: backgroundSnow});
                     break;
                 default:
                     break;
             }
-            
-
+ 
         }).catch(err => {
             this.setState({errorMessage: err});
             console.error("An error occured", err);
@@ -82,15 +88,24 @@ componentDidMount() { // determine user location and make API request
 
 
 render() {
-    console.log("render")
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <Background backgroundImage={this.state.backgroundImage}/>
-                </Col>
-            </Row>
-        </Container>
+            <Background backgroundImage={this.state.backgroundImage}>
+                <Container fluid>
+                    <Row>
+                        <Col>
+                            <Current/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Daily/>
+                        </Col>
+                        <Col>
+                            <Hourly/>
+                        </Col>
+                    </Row>
+                </Container>
+            </Background>
         );
     }
 }

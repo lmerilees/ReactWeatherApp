@@ -3,22 +3,12 @@ import './App.css';
 import Layout from './components/Layout/Layout'
 import Home from '../src/Home'
 import Map from './containers/Map/Map'
-import background1 from '../src/Images/background1.jpg'
+
 import {BrowserRouter, NavLink, Redirect, Route, Switch} from 'react-router-dom'
 import { Nav, Navbar } from 'react-bootstrap';
 
-const styleBG = {
-    width: '100%',
-    height: '100%',
-    backgroundImage: 'url(' + background1 + ')',
-    backgroundSize: "cover",
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-}
-
 function App() {
-    return (
-            <div style={styleBG}>
+    return(
                 <Layout>
                     <BrowserRouter>
                         <Navbar bg="dark" variant="dark" expand="sm" >
@@ -38,7 +28,6 @@ function App() {
                         </Switch>
                     </BrowserRouter>
                 </Layout>
-            </div>
     );
 }
 

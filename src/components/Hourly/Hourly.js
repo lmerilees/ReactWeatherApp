@@ -8,7 +8,7 @@ const styleHourly = {
     cursor: "pointer",
     display: "flex",
     flexDirection: "row",
-    fontSize: 30,
+    fontSize: 20,
     fontFamily: "Acme",
     alignItems: "center",
 }
@@ -22,7 +22,7 @@ const styleTime = {
 
 const styleCond = {
     color: "black",
-    fontsize: 4,
+    fontsize: 3,
     flex: "1"
 }
 
@@ -32,7 +32,7 @@ const styleImg = {
 
 const styleTemp = {
     color: "dark grey",
-    fontsize: 10,
+    fontsize: 8,
     flex: "1"
 }
 
