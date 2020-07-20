@@ -5,9 +5,9 @@ import backgroundScattered from 'C:/Users/city_/weather-app2/src/Images/backgrou
 import backgroundCloudy from 'C:/Users/city_/weather-app2/src/Images/backgroundcloudy.jpg'
 import backgroundRain from 'C:/Users/city_/weather-app2/src/Images/backgroundrain.jpg'
 import backgroundThunderstorm from 'C:/Users/city_/weather-app2/src/Images/backgroundthunderstorm.jpg'
-import backgroundClear from 'C:/Users/city_/weather-app2/src/Images/backgroundclear.jpg'
 import backgroundOvercast from 'C:/Users/city_/weather-app2/src/Images/backgroundovercast.jpg'
 import backgroundSnow from 'C:/Users/city_/weather-app2/src/Images/backgroundsnow.jpg'
+import backgroundClear from 'C:/Users/city_/weather-app2/src/Images/backgroundclear.jpg'
 
 import Daily from 'C:/Users/city_/weather-app2/src/containers/Daily/Daily'
 import Current from 'C:/Users/city_/weather-app2/src/containers/Current/Current'
