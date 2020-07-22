@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Background from '../../components/Background/Background'
 import { Container, Row, Col } from 'react-bootstrap';
 import backgroundScattered from 'C:/Users/city_/weather-app2/src/Images/backgroundScattered.jpg'
-import backgroundCloudy from 'C:/Users/city_/weather-app2/src/Images/backgroundcloudy.jpg'
+import backgroundCloudy from 'C:/Users/city_/weather-app2/src/Images/backgroundCloudy.jpg'
 import backgroundRain from 'C:/Users/city_/weather-app2/src/Images/backgroundrain.jpg'
 import backgroundThunderstorm from 'C:/Users/city_/weather-app2/src/Images/backgroundthunderstorm.jpg'
 import backgroundOvercast from 'C:/Users/city_/weather-app2/src/Images/backgroundovercast.jpg'

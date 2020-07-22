@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react'
 import {Container, Row, Col} from 'react-bootstrap';
+import backgroundImage from 'C:/Users/city_/weather-app2/src/Images/backgroundclear.jpg'
 let index = 0;
 
 const mapStyles = {
@@ -20,6 +21,14 @@ const radarStyles = {
 
 const timeStyles = {
     color: "white"
+}
+
+const bgStyles = {
+    width: '100%',
+    height: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundImage: 'url(' + backgroundImage + ')'
 }
 
 class MapContainer extends Component {
@@ -114,7 +123,7 @@ class MapContainer extends Component {
 
     render() {
         return (
-            <Container fluid="xl">
+            <Container fluid style={bgStyles}>
                 <Row>
                     <Col>
                         <br></br>
