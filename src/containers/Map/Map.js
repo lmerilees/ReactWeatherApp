@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react'
 import {Container, Row, Col} from 'react-bootstrap';
-import backgroundImage from 'C:/Users/city_/weather-app2/src/Images/backgroundclear.jpg'
+import backgroundImage from 'C:/Users/city_/weather-app2/src/Images/backgroundovercast.jpg'
 let index = 0;
 
 const mapStyles = {
     width: '512px',
     height: '512px',
-    position: 'absolute',
+    position: "fixed",
     zIndex: 0,
 };
 
@@ -16,7 +16,8 @@ const radarStyles = {
     width: '512px',
     height: '512px',
     position: "relative",
-    zIndex: 1
+    zIndex: 1, 
+    left: "15px"          //radar and map don't line up when centering div
 }
 
 const timeStyles = {
@@ -28,7 +29,7 @@ const bgStyles = {
     height: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    backgroundImage: 'url(' + backgroundImage + ')'
+    backgroundImage: 'url(' + backgroundImage + ')',
 }
 
 class MapContainer extends Component {
@@ -124,32 +125,34 @@ class MapContainer extends Component {
     render() {
         return (
             <Container fluid style={bgStyles}>
-                <Row>
-                    <Col>
-                        <br></br>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Map
-                        google={this.props.google}
-                        style={mapStyles}
-                        initialCenter={{
-                                lat: this.state.lat,
-                                lng: this.state.lon
-                            }}
-                        zoom={7}
-                        />
-                        <img src={this.state.url} style={radarStyles} alt={""}/>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        {/* find a better way to do this or put something here */}
-                        <div style={timeStyles}>{this.state.time}</div>
-                        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                    </Col>
-                </Row>
+                <div align="center">
+                    <Row>
+                        <Col>
+                            <br></br>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Map
+                                google={this.props.google}
+                                style={mapStyles}
+                                initialCenter={{
+                                        lat: this.state.lat,
+                                        lng: this.state.lon
+                                    }}
+                                zoom={7}
+                            />
+                            <img src={this.state.url} style={radarStyles} alt={""}/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            {/* find a better way to do this or put something here */}
+                            <div style={timeStyles}>{this.state.time}</div>
+                            <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                        </Col>
+                    </Row>
+                </div>
             </Container>
         );
     }
