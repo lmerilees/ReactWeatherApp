@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![alt text](https://github.com/lmerilees/ReactWeatherApp/src/Images/HomeSample2.png)
+![Home](src/Images/HomeSample1.png)
 
 ## Available Scripts
 
