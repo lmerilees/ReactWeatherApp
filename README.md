@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Sample Images](#sample images)
+* [Sample Images](#sample-images)
 
 ## General info
 This project is a simple weather application. Includes current conditions, hourly and 5 day forecast, and radar.
