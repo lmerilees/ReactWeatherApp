@@ -2,6 +2,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Sample Images](#sample images)
 
 ## General info
 This project is a simple weather application. Includes current conditions, hourly and 5 day forecast, and radar.
@@ -23,4 +24,8 @@ $ npm start
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sample Images
+
+![Home1](src/Images/HomeSample1.png)
+![Home2](src/Images/HomeSample2.png)
+![Radar1](src/Images/RadarSample1.gif)
