@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Home](src/Images/HomeSample1.png)
+![Home1](src/Images/HomeSample1.png)
+![Home2](src/Images/HomeSample2.png)
 
 ## Available Scripts
 
