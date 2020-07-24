@@ -53,6 +53,8 @@ class Backgrounds extends Component {
             switch(cond) {
                 case "clear": this.setState({backgroundImage: backgroundClear});
                     break;
+                case "few clouds": this.setState({backgroundImage: backgroundScattered});
+                    break;
                 case "broken clouds": this.setState({backgroundImage: backgroundCloudy});
                     break;
                 case "scattered clouds": this.setState({backgroundImage: backgroundScattered});

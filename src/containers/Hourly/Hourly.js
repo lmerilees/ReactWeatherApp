@@ -187,6 +187,8 @@ class Hourlies extends Component {
         switch (this.state.cond1)  {
             case "clear sky": this.setState({image1: <img src={sunny} alt="img1"></img> });
                 break;
+            case "few clouds": this.setState({image1: <img src={mostlyCloudy} alt="img1"></img> });
+                break;
             case "scattered clouds": this.setState({image1: <img src={mostlyCloudy} alt="img2"></img>});
                 break;
             case "few clouds": this.setState({image1: <img src={mostlyCloudy} alt="img2"></img>});
@@ -215,6 +217,8 @@ class Hourlies extends Component {
         switch (this.state.cond2)  {
             case "clear sky": this.setState({image2: <img src={sunny} alt="img1"></img> });
                 break;
+            case "few clouds": this.setState({image2: <img src={mostlyCloudy} alt="img1"></img> });
+                break;
             case "scattered clouds": this.setState({image2: <img src={mostlyCloudy} alt="img2"></img>});
                 break;
             case "few clouds": this.setState({image2: <img src={mostlyCloudy} alt="img2"></img>});
@@ -242,6 +246,8 @@ class Hourlies extends Component {
         }   
         switch (this.state.cond3)  {
             case "clear sky": this.setState({image3: <img src={sunny} alt="img1"></img> });
+                break;
+            case "few clouds": this.setState({image3: <img src={mostlyCloudy} alt="img1"></img> });
                 break;
             case "scattered clouds": this.setState({image3: <img src={mostlyCloudy} alt="img2"></img>});
                 break;
@@ -298,6 +304,8 @@ class Hourlies extends Component {
         }   
         switch (this.state.cond5)  {
             case "clear sky": this.setState({image5: <img src={sunny} alt="img1"></img> });
+                break;
+            case "few clouds": this.setState({image5: <img src={mostlyCloudy} alt="img1"></img> });
                 break;
             case "scattered clouds": this.setState({image5: <img src={mostlyCloudy} alt="img2"></img>});
                 break;
