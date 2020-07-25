@@ -118,6 +118,8 @@ class Currents extends Component {
                     break;
                 case "light rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
                     break;
+                case "shower rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
+                    break; 
                 case "rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});
                     break;
                 case "light intensity shower rain": this.setState({icon: <img src={rainbig} alt="img2"></img>});

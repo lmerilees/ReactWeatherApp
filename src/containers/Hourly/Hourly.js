@@ -203,6 +203,8 @@ class Hourlies extends Component {
                 break;
             case "moderate rain": this.setState({image1: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image1: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image1: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image1: <img src={thunderstorm} alt="img4"></img>});
@@ -232,6 +234,8 @@ class Hourlies extends Component {
             case "light rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
             case "moderate rain": this.setState({image2: <img src={rain} alt="img3"></img>});
+                break;
+            case "shower rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
@@ -263,6 +267,8 @@ class Hourlies extends Component {
                 break;
             case "moderate rain": this.setState({image3: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image3: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image3: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image3: <img src={thunderstorm} alt="img4"></img>});
@@ -290,6 +296,8 @@ class Hourlies extends Component {
             case "light rain": this.setState({image4: <img src={rain} alt="img3"></img>});
                 break;
             case "moderate rain": this.setState({image4: <img src={rain} alt="img3"></img>});
+                break;
+            case "shower rain": this.setState({image4: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image4: <img src={rain} alt="img3"></img>});
                 break;
@@ -321,6 +329,8 @@ class Hourlies extends Component {
                 break;            
             case "moderate rain": this.setState({image5: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image5: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image5: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image5: <img src={thunderstorm} alt="img4"></img>});
@@ -348,6 +358,8 @@ class Hourlies extends Component {
             case "light rain": this.setState({image6: <img src={rain} alt="img3"></img>});
                 break;
             case "moderate rain": this.setState({image6: <img src={rain} alt="img3"></img>});
+                break;
+            case "shower rain": this.setState({image6: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image6: <img src={rain} alt="img3"></img>});
                 break;
@@ -377,6 +389,8 @@ class Hourlies extends Component {
                 break;
             case "moderate rain": this.setState({image7: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image7: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image7: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image7: <img src={thunderstorm} alt="img4"></img>});
@@ -402,6 +416,8 @@ class Hourlies extends Component {
             case "light rain": this.setState({image8: <img src={rain} alt="img3"></img>});
                 break;
             case "moderate rain": this.setState({image8: <img src={rain} alt="img3"></img>});
+                break;
+            case "shower rain": this.setState({image8: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image8: <img src={rain} alt="img3"></img>});
                 break;
@@ -431,6 +447,8 @@ class Hourlies extends Component {
                 break;
             case "moderate rain": this.setState({image9: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image9: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image9: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image9: <img src={thunderstorm} alt="img4"></img>});
@@ -459,6 +477,8 @@ class Hourlies extends Component {
                 break;            
             case "moderate rain": this.setState({image10: <img src={rain} alt="img3"></img>});
                 break;
+            case "shower rain": this.setState({image11: <img src={rain} alt="img3"></img>});
+                break;
             case "heavy intensity rain": this.setState({image10: <img src={rain} alt="img3"></img>});
                 break;
             case "thunderstorm": this.setState({image10: <img src={thunderstorm} alt="img4"></img>});
@@ -485,6 +505,8 @@ class Hourlies extends Component {
                 break;
             case "light rain": this.setState({image11: <img src={rain} alt="img3"></img>});
                 break;            
+            case "shower rain": this.setState({image11: <img src={rain} alt="img3"></img>})
+                break;
             case "moderate rain": this.setState({image11: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image11: <img src={rain} alt="img3"></img>});
@@ -512,7 +534,9 @@ class Hourlies extends Component {
             case "rain": this.setState({image12: <img src={rain} alt="img3"></img>});
                 break;
             case "light rain": this.setState({image12: <img src={rain} alt="img3"></img>});
-                break;            
+                break;
+            case "shower rain": this.setState({image12: <img src={rain} alt="img3"></img>});
+                break;   
             case "moderate rain": this.setState({image12: <img src={rain} alt="img3"></img>});
                 break;
             case "heavy intensity rain": this.setState({image12: <img src={rain} alt="img3"></img>});

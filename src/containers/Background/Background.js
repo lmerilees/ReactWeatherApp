@@ -61,6 +61,8 @@ class Backgrounds extends Component {
                     break;
                 case "overcast clouds": this.setState({backgroundImage: backgroundOvercast});
                     break;
+                case "shower rain": this.setState({backgroundImage: backgroundRain});
+                    break; 
                 case "light rain": this.setState({backgroundImage: backgroundRain});
                     break;
                 case "rain": this.setState({backgroundImage: backgroundRain});
