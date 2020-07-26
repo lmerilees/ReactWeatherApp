@@ -75,7 +75,7 @@ class Backgrounds extends Component {
                     break;
                 case "snow": this.setState({backgroundImage: backgroundSnow});
                     break;
-                default:
+                default: this.setState({backgroundImage: backgroundClear});
                     break;
             }
  

@@ -213,7 +213,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image1: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond2)  {
@@ -245,7 +245,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image2: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image2: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond3)  {
@@ -277,7 +277,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image3: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image3: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond4)  {
@@ -307,7 +307,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image4: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image4: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond5)  {
@@ -339,7 +339,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image5: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image5: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond6)  {
@@ -369,7 +369,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image6: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image6: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond7)  {
@@ -397,7 +397,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image7: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image7: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond8)  {
@@ -427,7 +427,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image8: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image8: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond9)  {
@@ -457,7 +457,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image9: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image9: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond10)  {
@@ -487,7 +487,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image10: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image10: <img src={sunny} alt="img1"></img> });
                 break;
         }
         switch (this.state.cond11)  {
@@ -517,7 +517,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image11: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image11: <img src={sunny} alt="img1"></img> });
                 break;
         }  
         switch (this.state.cond12)  {
@@ -547,7 +547,7 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image12: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image12: <img src={sunny} alt="img1"></img> });
                 break;
         }  
     }

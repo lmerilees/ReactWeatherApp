@@ -128,7 +128,7 @@ class Dailies extends Component {
                 break;    
             case "snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image1: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond2)  {
@@ -158,7 +158,7 @@ class Dailies extends Component {
                 break;
             case "snow": this.setState({image2: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image2: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond3)  {
@@ -188,7 +188,7 @@ class Dailies extends Component {
                 break;
             case "snow": this.setState({image3: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image3: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond4)  {
@@ -218,7 +218,7 @@ class Dailies extends Component {
                 break;
             case "snow": this.setState({image4: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image4: <img src={sunny} alt="img1"></img> });
                 break;
         }   
         switch (this.state.cond5)  {
@@ -248,7 +248,7 @@ class Dailies extends Component {
                 break;
             case "snow": this.setState({image5: <img src={snow} alt="img5"></img>});
                 break;
-            default:
+            default: this.setState({image5: <img src={sunny} alt="img1"></img> });
                 break;
         }   
     }
