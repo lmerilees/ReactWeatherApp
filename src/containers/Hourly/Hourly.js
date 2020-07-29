@@ -173,7 +173,10 @@ class Hourlies extends Component {
             num = num - 12
             return num + "pm"
         }
-        if(num === 0){
+        else if (num === 12){
+            return num + "pm"
+        }
+        else if(num === 0){
             num = 12
         }
         return num + "am"

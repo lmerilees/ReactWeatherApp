@@ -19,12 +19,17 @@ function App() {
                                     <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
                                     <Nav.Link as={NavLink} to="/radar">Radar</Nav.Link>
                                 </Nav>
+                                <input
+                                    type="text"
+                                    value="Search"
+                                />
                             </Navbar.Collapse>
                         </Navbar>
                         <Switch>
                             <Route exact path='/home' component={Home}/>
                             <Route exact path='/radar' component={Map}/>
                             <Redirect from="/" to="/home"/>
+                            
                         </Switch>
                     </BrowserRouter>
                 </Layout>
