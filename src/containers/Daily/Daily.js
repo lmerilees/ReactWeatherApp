@@ -116,7 +116,7 @@ class Dailies extends Component {
                 break;
             case "light rain": this.setState({image1: <img src={rain} alt="img3"></img>});
                 break;
-                case "shower rain": this.setState({image1: <img src={rain} alt="img3"></img>});
+            case "shower rain": this.setState({image1: <img src={rain} alt="img3"></img>});
                 break; 
             case "moderate rain": this.setState({image1: <img src={rain} alt="img3"></img>});
                 break;
@@ -146,7 +146,7 @@ class Dailies extends Component {
                 break;
             case "light rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
-                case "shower rain": this.setState({image2: <img src={rain} alt="img3"></img>});
+            case "shower rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break; 
             case "moderate rain": this.setState({image2: <img src={rain} alt="img3"></img>});
                 break;
@@ -176,7 +176,7 @@ class Dailies extends Component {
                 break;
             case "light rain": this.setState({image3: <img src={rain} alt="img3"></img>});
                 break;
-                case "shower rain": this.setState({image3: <img src={rain} alt="img3"></img>});
+            case "shower rain": this.setState({image3: <img src={rain} alt="img3"></img>});
                 break; 
             case "moderate rain": this.setState({image3: <img src={rain} alt="img3"></img>});
                 break;
