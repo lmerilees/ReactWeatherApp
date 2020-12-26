@@ -1,0 +1,20 @@
+fetch('http://localhost:3001/getUsers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({user_id, user_password}),
+      })
+    .then(response => {
+            localStorage.setItem("token", "T");
+            this.setState({
+              islogged: true
+            });
+          event.preventDefault();
+        return response.text();
+    })
+    .then(data => {
+        console.log(data);
+        //setUsers(data);
+    });
+}

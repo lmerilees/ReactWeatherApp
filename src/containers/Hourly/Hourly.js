@@ -216,6 +216,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
+                    break;
             default: this.setState({image1: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -247,6 +249,8 @@ class Hourlies extends Component {
             case "thunderstorm with rain": this.setState({image2: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image2: <img src={snow} alt="img5"></img>});
+                break;
+            case "light snow": this.setState({image2: <img src={snow} alt="img2"></img>});
                 break;
             default: this.setState({image2: <img src={sunny} alt="img1"></img> });
                 break;
@@ -280,6 +284,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image3: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image3: <img src={snow} alt="img3"></img>});
+                    break;
             default: this.setState({image3: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -309,6 +315,8 @@ class Hourlies extends Component {
             case "thunderstorm with rain": this.setState({image4: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image4: <img src={snow} alt="img5"></img>});
+                break;
+            case "light snow": this.setState({image4: <img src={snow} alt="img4"></img>});
                 break;
             default: this.setState({image4: <img src={sunny} alt="img1"></img> });
                 break;
@@ -342,6 +350,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image5: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image5: <img src={snow} alt="img5"></img>});
+                    break;
             default: this.setState({image5: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -372,6 +382,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image6: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image6: <img src={snow} alt="img5"></img>});
+                    break;
             default: this.setState({image6: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -400,6 +412,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image7: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image7: <img src={snow} alt="img5"></img>});
+                    break;
             default: this.setState({image7: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -429,6 +443,8 @@ class Hourlies extends Component {
             case "thunderstorm with rain": this.setState({image8: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image8: <img src={snow} alt="img5"></img>});
+                break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
             default: this.setState({image8: <img src={sunny} alt="img1"></img> });
                 break;
@@ -460,6 +476,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image9: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
+                break;
             default: this.setState({image9: <img src={sunny} alt="img1"></img> });
                 break;
         }   
@@ -489,6 +507,8 @@ class Hourlies extends Component {
             case "thunderstorm with rain": this.setState({image10: <img src={thunderstorm} alt="img4"></img>});
                 break;
             case "snow": this.setState({image10: <img src={snow} alt="img5"></img>});
+                break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
                 break;
             default: this.setState({image10: <img src={sunny} alt="img1"></img> });
                 break;
@@ -520,6 +540,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image11: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
+                break;
             default: this.setState({image11: <img src={sunny} alt="img1"></img> });
                 break;
         }  
@@ -550,6 +572,8 @@ class Hourlies extends Component {
                 break;
             case "snow": this.setState({image12: <img src={snow} alt="img5"></img>});
                 break;
+            case "light snow": this.setState({image1: <img src={snow} alt="img5"></img>});
+                    break;
             default: this.setState({image12: <img src={sunny} alt="img1"></img> });
                 break;
         }  
