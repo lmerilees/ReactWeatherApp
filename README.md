@@ -26,6 +26,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Sample Images
 
-![Home1](src/Images/HomeSample1.png)
-![Home2](src/Images/HomeSample2.png)
+![Home1](src/Images/Home1.gif)
+![Home2](src/Images/Home2.gif)
 ![Radar1](src/Images/RadarSample1.gif)
