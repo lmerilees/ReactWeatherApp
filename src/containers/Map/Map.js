@@ -141,6 +141,14 @@ class MapContainer extends Component {
                                         lng: this.state.lon
                                     }}
                                 zoom={7}
+                                mapTypeControl={false}
+                                scaleControl={false}
+                                scrollwheel={false}
+                                draggable={false}
+                                zoomControl={false}
+                                mapTypeControl={false}
+                                fullscreenControl={false}
+                                streetViewControl={false}
                             />
                             <img src={this.state.url} style={radarStyles} alt={""}/>
                         </Col>
